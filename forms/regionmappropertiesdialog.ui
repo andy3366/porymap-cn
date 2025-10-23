@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Region Map Properties</string>
+   <string>地区地图属性</string>
   </property>
   <layout class="QFormLayout" name="formLayout_4">
    <property name="fieldGrowthPolicy">
@@ -26,14 +26,14 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>alias</string>
+      <string>名称</string>
      </property>
     </widget>
    </item>
    <item row="0" column="1">
     <widget class="QLineEdit" name="config_alias">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A nickname for this region map that will differentiate it from others (should be unique).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此地区地图的别名，用于与其他地区地图区分（应保持唯一性）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -50,24 +50,24 @@
    <item row="4" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Tilemap Properties</string>
+      <string>tilemap 属性</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
       <item row="0" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>format</string>
+         <string>格式</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QComboBox" name="config_tilemapFormat">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The tilemap format can be either:&lt;/p&gt;&lt;p&gt;1) Plain (tilemap is a list of 8-bit tile indexes into the tileset)&lt;/p&gt;&lt;p&gt;2) 4BPP (tilemap entries are 16 bits, with x/y-flip, and palette index for 16 16-color palettes)&lt;/p&gt;&lt;p&gt;3) 8BPP (tilemap entries are 16 bits, with x/y-flip, single 256-color palette)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tilemap 格式可以是以下之一：&lt;/p&gt;&lt;p&gt;1) 基础格式（Tilemap 是一个由8位图块索引组成的列表，这些索引指向 tileset）&lt;/p&gt;&lt;p&gt;2) 4BPP（Tilemap 条目为16位，包含X/Y翻转功能，以及16个16色调色板的调色板索引）&lt;/p&gt;&lt;p&gt;3) 8BPP（Tilemap 条目为16位，包含X/Y翻转功能，使用单个256色调色板）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <item>
          <property name="text">
-          <string>plain</string>
+          <string>基础格式</string>
          </property>
         </item>
         <item>
@@ -95,7 +95,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>width</string>
+         <string>宽度</string>
         </property>
        </widget>
       </item>
@@ -112,7 +112,7 @@
       <item row="4" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>height</string>
+         <string>高度</string>
         </property>
        </widget>
       </item>
@@ -131,7 +131,7 @@
          </size>
         </property>
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The height of the tilemap&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tilemap 的高度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="maximum">
          <number>255</number>
@@ -141,7 +141,7 @@
       <item row="6" column="0">
        <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>tileset path</string>
+         <string>tileset 路径</string>
         </property>
        </widget>
       </item>
@@ -181,7 +181,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path to the tileset image (.png) relative to the project root.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;tileset 图像文件 (.png) 相对于项目根目录的路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -208,14 +208,14 @@
       <item row="8" column="0">
        <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>tilemap path</string>
+         <string>tilemap 路径</string>
         </property>
        </widget>
       </item>
       <item row="8" column="1">
        <widget class="QFrame" name="frame_2">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path to the tilemap binary relative to the project root.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;tilemap 二进制文件相对于项目根目录的路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::NoFrame</enum>
@@ -262,7 +262,7 @@
       <item row="10" column="0">
        <widget class="QLabel" name="label_11">
         <property name="text">
-         <string>palette path</string>
+         <string>调色板路径</string>
         </property>
        </widget>
       </item>
@@ -290,7 +290,7 @@
          <item>
           <widget class="QLineEdit" name="config_tilemapPalettePath">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(optional) Path to the .pal JASC palette file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;（可选）指向 JASC 格式 .pal 调色板文件的路径&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -329,7 +329,7 @@
          </size>
         </property>
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The width of the tilemap&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;tilemap 的宽度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="maximum">
          <number>255</number>
@@ -342,7 +342,7 @@
    <item row="6" column="0" colspan="2">
     <widget class="QGroupBox" name="group_layout">
      <property name="title">
-      <string>Layout Properties</string>
+      <string>布局属性</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -351,23 +351,23 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_9">
         <property name="text">
-         <string>format</string>
+         <string>格式</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QComboBox" name="config_layoutFormat">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The format of the layout file, can be a C array in a text file with &amp;quot;MAPSEC_&amp;quot;-prefixed constants, or a binary file where each byte is a value of some &amp;quot;MAPSEC_&amp;quot;-prefixed constant.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;布局文件的格式可以是带有&amp;quot;MAPSEC_&amp;quot;前缀常量的文本文件中的C数组，也可以是二进制文件，其中每个字节是某个&amp;quot;MAPSEC_&amp;quot;前缀常量的值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <item>
          <property name="text">
-          <string>C array</string>
+          <string>C 数组</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>binary</string>
+          <string>二进制</string>
          </property>
         </item>
        </widget>
@@ -385,7 +385,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_10">
         <property name="text">
-         <string>layout path</string>
+         <string>布局路径</string>
         </property>
        </widget>
       </item>
@@ -413,7 +413,7 @@
          <item>
           <widget class="QLineEdit" name="config_layoutPath">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The path to the layout file, relative to the project root.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;布局文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -455,7 +455,7 @@
          <item>
           <widget class="QLabel" name="label_16">
            <property name="text">
-            <string>width</string>
+            <string>宽度</string>
            </property>
           </widget>
          </item>
@@ -474,7 +474,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The layout width.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;布局宽度。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="minimum">
             <number>0</number>
@@ -500,14 +500,14 @@
          <item>
           <widget class="QLabel" name="label_12">
            <property name="text">
-            <string>left offset</string>
+            <string>左偏移</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QSpinBox" name="config_leftOffs">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The offset from the left of the tilemap where the layout starts.&lt;/p&gt;&lt;p&gt;(ie, coordinate (0,0) in the layout would be (offset left, offset top) in the tilemap).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;布局在 tilemap 中起始位置的左侧偏移量。&lt;/p&gt;&lt;p&gt;（例如，布局中的坐标 (0,0) 对应 tilemap 中的 (左侧偏移, 顶部偏移)）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="maximum">
             <number>255</number>
@@ -558,7 +558,7 @@
          <item>
           <widget class="QLabel" name="label_17">
            <property name="text">
-            <string>height</string>
+            <string>高度</string>
            </property>
           </widget>
          </item>
@@ -577,7 +577,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The layout height.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;布局高度。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="minimum">
             <number>0</number>
@@ -603,14 +603,14 @@
          <item>
           <widget class="QLabel" name="label_13">
            <property name="text">
-            <string>top offset</string>
+            <string>顶部偏移</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QSpinBox" name="config_topOffs">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The offset from the top of the tilemap where the layout starts.&lt;/p&gt;&lt;p&gt;(ie, coordinate (0,0) in the layout would be (offset left, offset top) in the tilemap).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;布局在 tilemap 中起始位置的顶部偏移量。&lt;/p&gt;&lt;p&gt;（例如，布局中的坐标 (0,0) 对应 tilemap 中的 (左侧偏移, 顶部偏移)）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>

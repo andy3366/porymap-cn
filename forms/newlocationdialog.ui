@@ -32,7 +32,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_IdName">
         <property name="text">
-         <string>Location ID</string>
+         <string>地点 ID</string>
         </property>
        </widget>
       </item>
@@ -62,7 +62,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_DisplayName">
         <property name="text">
-         <string>Location Name</string>
+         <string>地点名称</string>
         </property>
        </widget>
       </item>

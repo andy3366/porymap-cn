@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Palette Editor</string>
+   <string>调色板编辑器</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_18">
@@ -27,7 +27,7 @@
        <item>
         <widget class="QLabel" name="label_Palette">
          <property name="text">
-          <string>Palette</string>
+          <string>调色板</string>
          </property>
         </widget>
        </item>
@@ -41,7 +41,7 @@
        <item>
         <widget class="QToolButton" name="toolButton_ColorSearch">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens a search dialog to find which tilesets/metatiles are using certain colors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;打开搜索对话框，查找使用了特定颜色的图块集/地图块。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>...</string>
@@ -55,7 +55,7 @@
        <item>
         <widget class="QLabel" name="label_AllColorsUsed">
          <property name="text">
-          <string>(All colors used)</string>
+          <string>(所有颜色都已使用)</string>
          </property>
         </widget>
        </item>
@@ -75,7 +75,7 @@
        <item>
         <widget class="QLabel" name="label_BitDepth">
          <property name="text">
-          <string>Bit Depth:</string>
+          <string>位深度：</string>
          </property>
         </widget>
        </item>
@@ -143,26 +143,26 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>文件</string>
     </property>
     <addaction name="actionImport_Palette"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>编辑</string>
     </property>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
-     <string>View</string>
+     <string>视图</string>
     </property>
     <addaction name="actionShow_Unused_Colors"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Tools</string>
+     <string>工具</string>
     </property>
     <addaction name="actionFind_Color_Usage"/>
    </widget>
@@ -177,7 +177,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Undo</string>
+    <string>撤销</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -194,7 +194,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Redo</string>
+    <string>恢复</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Y</string>
@@ -202,7 +202,7 @@
   </action>
   <action name="actionImport_Palette">
    <property name="text">
-    <string>Import Palette</string>
+    <string>导入调色板</string>
    </property>
   </action>
   <action name="actionShow_Unused_Colors">
@@ -210,12 +210,12 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Show Unused Colors</string>
+    <string>显示未使用的颜色</string>
    </property>
   </action>
   <action name="actionFind_Color_Usage">
    <property name="text">
-    <string>Find Color Usage...</string>
+    <string>查找颜色使用情况...</string>
    </property>
   </action>
  </widget>

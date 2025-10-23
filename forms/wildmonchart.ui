@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Wild Pokémon Summary</string>
+   <string>野生宝可梦概览</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -38,7 +38,7 @@
       <item>
        <widget class="QLabel" name="label_Theme">
         <property name="text">
-         <string>Theme</string>
+         <string>主题</string>
         </property>
        </widget>
       </item>
@@ -79,7 +79,7 @@
      </property>
      <widget class="QWidget" name="tabSpecies">
       <attribute name="title">
-       <string>Species Distribution</string>
+       <string>精灵分布</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="leftMargin">
@@ -102,7 +102,7 @@
      </widget>
      <widget class="QWidget" name="tabLevels">
       <attribute name="title">
-       <string>Level Distribution</string>
+       <string>等级分布</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="leftMargin">
@@ -135,7 +135,7 @@
           <item>
            <widget class="QLabel" name="label_Group">
             <property name="text">
-             <string>Group</string>
+             <string>组</string>
             </property>
            </widget>
           </item>
@@ -168,7 +168,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_Species">
             <property name="title">
-             <string>Individual Mode</string>
+             <string>独立显示</string>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -192,7 +192,7 @@
              <item row="0" column="0">
               <widget class="QLabel" name="label_Species">
                <property name="text">
-                <string>Species</string>
+                <string>精灵种类</string>
                </property>
               </widget>
              </item>

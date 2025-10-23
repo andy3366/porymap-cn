@@ -26,7 +26,7 @@
    <item>
     <widget class="QCheckBox" name="checkBox_Enable">
      <property name="toolTip">
-      <string>If unchecked this script will be ignored</string>
+      <string>如果不勾选，此脚本将不会启用</string>
      </property>
      <property name="text">
       <string/>
@@ -49,7 +49,7 @@
    <item>
     <widget class="QToolButton" name="b_Choose">
      <property name="toolTip">
-      <string>Choose a new filepath for this script</string>
+      <string>为此脚本选择新的文件路径</string>
      </property>
      <property name="text">
       <string>...</string>
@@ -63,7 +63,7 @@
    <item>
     <widget class="QToolButton" name="b_Edit">
      <property name="toolTip">
-      <string>Open this script file</string>
+      <string>打开此脚本</string>
      </property>
      <property name="text">
       <string>...</string>
@@ -77,7 +77,7 @@
    <item>
     <widget class="QToolButton" name="b_Delete">
      <property name="toolTip">
-      <string>Remove this script</string>
+      <string>删除此脚本</string>
      </property>
      <property name="text">
       <string>...</string>

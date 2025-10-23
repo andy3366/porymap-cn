@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Custom Scripts Editor</string>
+   <string>自定义 Porymap 脚本编辑器</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -60,10 +60,10 @@
           <item>
            <widget class="QPushButton" name="button_CreateNewScript">
             <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a new Porymap script file with a default template&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用默认模板创建一个新的 Porymap 脚本文件&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
-             <string>Create New Script...</string>
+             <string>新建脚本...</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/images.qrc">
@@ -74,10 +74,10 @@
           <item>
            <widget class="QPushButton" name="button_LoadScript">
             <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add an existing script file to the list below&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将现有 Porymap 脚本文件添加到下方列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
-             <string>Load Script...</string>
+             <string>导入脚本...</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/images.qrc">
@@ -88,10 +88,10 @@
           <item>
            <widget class="QPushButton" name="button_RefreshScripts">
             <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Refresh all loaded scripts to account for any recent edits&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;刷新所有已加载的脚本&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
-             <string>Refresh Scripts</string>
+             <string>刷新脚本</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/images.qrc">

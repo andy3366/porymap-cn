@@ -248,27 +248,27 @@ void ObjectFrame::setup() {
     // local id
     QFormLayout *l_form_local_id = new QFormLayout();
     this->line_edit_local_id = new QLineEdit(this);
-    static const QString line_edit_local_id_toolTip = Util::toHtmlParagraph("An optional, unique name to use to refer to this object in scripts. "
-                                                                            "If no name is given you can refer to this object using its 'object id' number.");
+    static const QString line_edit_local_id_toolTip = Util::toHtmlParagraph("用于在脚本中引用此NPC的名称。"
+                                                                            "如果未指定，可以使用'人物事件ID'编号引用。");
     this->line_edit_local_id->setToolTip(line_edit_local_id_toolTip);
     this->line_edit_local_id->setPlaceholderText("LOCALID_MY_NPC");
-    l_form_local_id->addRow("Local ID", this->line_edit_local_id);
+    l_form_local_id->addRow("人物 ID", this->line_edit_local_id);
     this->layout_contents->addLayout(l_form_local_id);
 
     // sprite combo
     QFormLayout *l_form_sprite = new QFormLayout();
     this->combo_sprite = new NoScrollComboBox(this);
-    static const QString combo_sprite_toolTip = Util::toHtmlParagraph("The sprite graphics to use for this object.");
+    static const QString combo_sprite_toolTip = Util::toHtmlParagraph("用于此人物事件的图片。");
     this->combo_sprite->setToolTip(combo_sprite_toolTip);
-    l_form_sprite->addRow("Sprite", this->combo_sprite);
+    l_form_sprite->addRow("人物图片", this->combo_sprite);
     this->layout_contents->addLayout(l_form_sprite);
 
     // movement
     QFormLayout *l_form_movement = new QFormLayout();
     this->combo_movement = new NoScrollComboBox(this);
-    static const QString combo_movement_toolTip = Util::toHtmlParagraph("The object's natural movement behavior when the player is not interacting with it.");
+    static const QString combo_movement_toolTip = Util::toHtmlParagraph("玩家不与此人物事件互动时，该事件的自主移动方式。");
     this->combo_movement->setToolTip(combo_movement_toolTip);
-    l_form_movement->addRow("Movement", this->combo_movement);
+    l_form_movement->addRow("移动类型", this->combo_movement);
     this->layout_contents->addLayout(l_form_movement);
     
     // movement radii
@@ -276,28 +276,26 @@ void ObjectFrame::setup() {
     this->spinner_radius_x = new NoScrollSpinBox(this);
     this->spinner_radius_x->setMinimum(0);
     this->spinner_radius_x->setMaximum(255);
-    static const QString spinner_radius_x_toolTip = Util::toHtmlParagraph("The maximum number of metatiles this object is allowed to move left "
-                                                                          "or right during its normal movement behavior actions.");
+    static const QString spinner_radius_x_toolTip = Util::toHtmlParagraph("此人物事件在其正常移动行为中，允许向左或向右移动的最大地图块数量。");
     this->spinner_radius_x->setToolTip(spinner_radius_x_toolTip);
     this->spinner_radius_y = new NoScrollSpinBox(this);
     this->spinner_radius_y->setMinimum(0);
     this->spinner_radius_y->setMaximum(255);
-    static const QString spinner_radius_y_toolTip = Util::toHtmlParagraph("The maximum number of metatiles this object is allowed to move up "
-                                                                          "or down during its normal movement behavior actions.");
+    static const QString spinner_radius_y_toolTip = Util::toHtmlParagraph("此人物事件在其正常移动行为中，允许向上或向下移动的最大地图块数量。");
     this->spinner_radius_y->setToolTip(spinner_radius_y_toolTip);
-    l_form_radii_xy->addRow("Movement Radius X", this->spinner_radius_x);
-    l_form_radii_xy->addRow("Movement Radius Y", this->spinner_radius_y);
+    l_form_radii_xy->addRow("移动距离 X", this->spinner_radius_x);
+    l_form_radii_xy->addRow("移动距离 Y", this->spinner_radius_y);
     this->layout_contents->addLayout(l_form_radii_xy);
 
     // script
     QFormLayout *l_form_script = new QFormLayout();
     this->combo_script = new NoScrollComboBox(this);
-    static const QString combo_script_toolTip = Util::toHtmlParagraph("The script that is executed with this event.");
+    static const QString combo_script_toolTip = Util::toHtmlParagraph("与此事件关联的脚本。");
     this->combo_script->setToolTip(combo_script_toolTip);
 
     // Add button next to combo which opens combo's current script.
     this->button_script = new QToolButton(this);
-    static const QString button_script_toolTip = Util::toHtmlParagraph("Go to this script definition in text editor.");
+    static const QString button_script_toolTip = Util::toHtmlParagraph("在文本编辑器中跳转至此脚本定义。");
     this->button_script->setToolTip(button_script_toolTip);
     this->button_script->setFixedSize(this->combo_script->height(), this->combo_script->height());
     this->button_script->setIcon(QFileIconProvider().icon(QFileIconProvider::File));
@@ -307,32 +305,31 @@ void ObjectFrame::setup() {
     l_hbox_scr->addWidget(this->combo_script);
     l_hbox_scr->addWidget(this->button_script);
 
-    l_form_script->addRow("Script", l_hbox_scr);
+    l_form_script->addRow("脚本", l_hbox_scr);
     this->layout_contents->addLayout(l_form_script);
 
     // event flag
     QFormLayout *l_form_flag = new QFormLayout();
     this->combo_flag = new NoScrollComboBox(this);
-    static const QString combo_flag_toolTip = Util::toHtmlParagraph("The flag that hides the object when set.");
+    static const QString combo_flag_toolTip = Util::toHtmlParagraph("用于此事件的flag id");
     this->combo_flag->setToolTip(combo_flag_toolTip);
-    l_form_flag->addRow("Event Flag", this->combo_flag);
+    l_form_flag->addRow("人物 Flag", this->combo_flag);
     this->layout_contents->addLayout(l_form_flag);
 
     // trainer type
     QFormLayout *l_form_trainer = new QFormLayout();
     this->combo_trainer_type = new NoScrollComboBox(this);
-    static const QString combo_trainer_type_toolTip = Util::toHtmlParagraph("The trainer type of this object event. If it is not a trainer, use NONE. "
-                                                                            "SEE ALL DIRECTIONS should only be used with a sight radius of 1.");
+    static const QString combo_trainer_type_toolTip = Util::toHtmlParagraph("此人物事件的训练师类型。如果不是训练师，请选择“NONE”。“SEE ALL DIRECTIONS”仅在与视图半径为1才生效。");
     this->combo_trainer_type->setToolTip(combo_trainer_type_toolTip);
-    l_form_trainer->addRow("Trainer Type", this->combo_trainer_type);
+    l_form_trainer->addRow("训练师类型", this->combo_trainer_type);
     this->layout_contents->addLayout(l_form_trainer);
 
     // sight radius / berry tree id
     QFormLayout *l_form_radius_treeid = new QFormLayout();
     this->combo_radius_treeid = new NoScrollComboBox(this);
-    static const QString combo_radius_treeid_toolTip = Util::toHtmlParagraph("The maximum sight range of a trainer, OR the unique id of the berry tree.");
+    static const QString combo_radius_treeid_toolTip = Util::toHtmlParagraph("训练师的最大视野范围，或果树的 ID。");
     this->combo_radius_treeid->setToolTip(combo_radius_treeid_toolTip);
-    l_form_radius_treeid->addRow("Sight Radius / Berry Tree ID", this->combo_radius_treeid);
+    l_form_radius_treeid->addRow("视野范围 / 果树 ID", this->combo_radius_treeid);
     this->layout_contents->addLayout(l_form_radius_treeid);
 
     // custom attributes
@@ -473,38 +470,36 @@ void CloneObjectFrame::setup() {
     // local id
     QFormLayout *l_form_local_id = new QFormLayout();
     this->line_edit_local_id = new QLineEdit(this);
-    static const QString line_edit_local_id_toolTip = Util::toHtmlParagraph("An optional, unique name to use to refer to this object in scripts. "
-                                                                            "If no name is given you can refer to this object using its 'object id' number.");
+    static const QString line_edit_local_id_toolTip = Util::toHtmlParagraph("用于在脚本中引用此NPC的名称。"
+                                                                            "如果未指定，可以使用'人物事件ID'编号引用。");
     this->line_edit_local_id->setToolTip(line_edit_local_id_toolTip);
     this->line_edit_local_id->setPlaceholderText("LOCALID_MY_CLONE_NPC");
-    l_form_local_id->addRow("Local ID", this->line_edit_local_id);
+    l_form_local_id->addRow("人物 ID", this->line_edit_local_id);
     this->layout_contents->addLayout(l_form_local_id);
 
     // sprite combo (edits disabled)
     QFormLayout *l_form_sprite = new QFormLayout();
     this->combo_sprite = new NoScrollComboBox(this);
-    static const QString combo_sprite_toolTip = Util::toHtmlParagraph("The sprite graphics to use for this object. This is updated automatically "
-                                                                      "to match the target object, and so can't be edited. By default the games "
-                                                                      "will get the graphics directly from the target object, so this field is ignored.");
+    static const QString combo_sprite_toolTip = Util::toHtmlParagraph("用于此人物事件的图片。这将自动匹配被克隆的人物事件图片，所以无法编辑。因此此字段被忽略。");
     this->combo_sprite->setToolTip(combo_sprite_toolTip);
-    l_form_sprite->addRow("Sprite", this->combo_sprite);
+    l_form_sprite->addRow("人物图片", this->combo_sprite);
     this->combo_sprite->setEnabled(false);
     this->layout_contents->addLayout(l_form_sprite);
 
     // clone map id combo
     QFormLayout *l_form_dest_map = new QFormLayout();
     this->combo_target_map = new NoScrollComboBox(this);
-    static const QString combo_target_map_toolTip = Util::toHtmlParagraph("The name of the map that the object being cloned is on.");
+    static const QString combo_target_map_toolTip = Util::toHtmlParagraph("被克隆的人物事件所在的地图名称。");
     this->combo_target_map->setToolTip(combo_target_map_toolTip);
-    l_form_dest_map->addRow("Target Map", this->combo_target_map);
+    l_form_dest_map->addRow("目标地图", this->combo_target_map);
     this->layout_contents->addLayout(l_form_dest_map);
 
     // clone local id combo
     QFormLayout *l_form_dest_id = new QFormLayout();
     this->combo_target_id = new NoScrollComboBox(this);
-    static const QString combo_target_id_toolTip = Util::toHtmlParagraph("The Local ID name or number of the object being cloned.");
+    static const QString combo_target_id_toolTip = Util::toHtmlParagraph("被克隆的人物事件的人物ID名称或编号。");
     this->combo_target_id->setToolTip(combo_target_id_toolTip);
-    l_form_dest_id->addRow("Target Local ID", this->combo_target_id);
+    l_form_dest_id->addRow("目标人物 ID", this->combo_target_id);
     this->layout_contents->addLayout(l_form_dest_id);
 
     // custom attributes
@@ -590,8 +585,8 @@ void WarpFrame::setup() {
     // ID
     QFormLayout *l_form_id = new QFormLayout();
     this->line_edit_id = new QLineEdit(this);
-    static const QString line_edit_id_toolTip = Util::toHtmlParagraph("An optional, unique name to use to refer to this warp from other warps. "
-                                                                      "If no name is given you can refer to this warp using its 'warp id' number.");
+    static const QString line_edit_id_toolTip = Util::toHtmlParagraph("用于在其他出入口中引用此出入口的名称。"
+                                                                            "如果未指定，可以使用'出入口ID'编号来引用。");
     this->line_edit_id->setToolTip(line_edit_id_toolTip);
     this->line_edit_id->setPlaceholderText("WARP_ID_MY_WARP");
     l_form_id->addRow("ID", this->line_edit_id);
@@ -600,21 +595,21 @@ void WarpFrame::setup() {
     // desination map combo
     QFormLayout *l_form_dest_map = new QFormLayout();
     this->combo_dest_map = new NoScrollComboBox(this);
-    static const QString combo_dest_map_toolTip = Util::toHtmlParagraph("The destination map name of the warp.");
+    static const QString combo_dest_map_toolTip = Util::toHtmlParagraph("此出入口的目标地图名称。");
     this->combo_dest_map->setToolTip(combo_dest_map_toolTip);
-    l_form_dest_map->addRow("Destination Map", this->combo_dest_map);
+    l_form_dest_map->addRow("目标地图", this->combo_dest_map);
     this->layout_contents->addLayout(l_form_dest_map);
 
     // desination warp id
     QFormLayout *l_form_dest_warp = new QFormLayout();
     this->combo_dest_warp = new NoScrollComboBox(this);
-    static const QString combo_dest_warp_toolTip = Util::toHtmlParagraph("The warp id on the destination map.");
+    static const QString combo_dest_warp_toolTip = Util::toHtmlParagraph("此出入口的目标出入口ID。");
     this->combo_dest_warp->setToolTip(combo_dest_warp_toolTip);
-    l_form_dest_warp->addRow("Destination Warp", this->combo_dest_warp);
+    l_form_dest_warp->addRow("目标出入口", this->combo_dest_warp);
     this->layout_contents->addLayout(l_form_dest_warp);
 
     // warning
-    auto warningText = QStringLiteral("Warning:\nThis warp event is not positioned on a metatile with a warp behavior.\nClick this warning for more details.");
+    auto warningText = QStringLiteral("警告：\n此出入口事件未放置在具有出入口行为的地图块上。\n点击此警告以获取更多详细信息。");
     QVBoxLayout *l_vbox_warning = new QVBoxLayout();
     this->warning = new QPushButton(warningText, this);
     this->warning->setFlat(true);
@@ -702,26 +697,25 @@ void TriggerFrame::setup() {
     // script combo
     QFormLayout *l_form_script = new QFormLayout();
     this->combo_script = new NoScrollComboBox(this);
-    static const QString combo_script_toolTip = Util::toHtmlParagraph("The script that is executed with this event.");
+    static const QString combo_script_toolTip = Util::toHtmlParagraph("与此事件关联的脚本。");
     this->combo_script->setToolTip(combo_script_toolTip);
-    l_form_script->addRow("Script", this->combo_script);
+    l_form_script->addRow("脚本", this->combo_script);
     this->layout_contents->addLayout(l_form_script);
 
     // var combo
     QFormLayout *l_form_var = new QFormLayout();
     this->combo_var = new NoScrollComboBox(this);
-    static const QString combo_var_toolTip = Util::toHtmlParagraph("The variable by which the script is triggered. "
-                                                                    "The script is triggered when this variable's value matches 'Var Value'.");
+    static const QString combo_var_toolTip = Util::toHtmlParagraph("触发脚本的变量。当此变量的值与'Var 值'匹配时，脚本将被触发。");
     this->combo_var->setToolTip(combo_var_toolTip);
-    l_form_var->addRow("Var", this->combo_var);
+    l_form_var->addRow("Var 变量", this->combo_var);
     this->layout_contents->addLayout(l_form_var);
 
     // var value combo
     QFormLayout *l_form_var_val = new QFormLayout();
     this->combo_var_value = new NoScrollComboBox(this);
-    static const QString combo_var_value_toolTip = Util::toHtmlParagraph("The variable's value that triggers the script.");
+    static const QString combo_var_value_toolTip = Util::toHtmlParagraph("触发脚本的变量值。");
     this->combo_var_value->setToolTip(combo_var_value_toolTip);
-    l_form_var_val->addRow("Var Value", this->combo_var_value);
+    l_form_var_val->addRow("Var 值", this->combo_var_value);
     this->layout_contents->addLayout(l_form_var_val);
 
     // custom attributes
@@ -789,9 +783,9 @@ void WeatherTriggerFrame::setup() {
     // weather combo
     QFormLayout *l_form_weather = new QFormLayout();
     this->combo_weather = new NoScrollComboBox(this);
-    static const QString combo_weather_toolTip = Util::toHtmlParagraph("The weather that starts when the player steps on this spot.");
+    static const QString combo_weather_toolTip = Util::toHtmlParagraph("当玩家踩到此位置时开始的天气。");
     this->combo_weather->setToolTip(combo_weather_toolTip);
-    l_form_weather->addRow("Weather", this->combo_weather);
+    l_form_weather->addRow("天气", this->combo_weather);
     this->layout_contents->addLayout(l_form_weather);
 
     // custom attributes
@@ -838,17 +832,17 @@ void SignFrame::setup() {
     // facing dir combo
     QFormLayout *l_form_facing_dir = new QFormLayout();
     this->combo_facing_dir = new NoScrollComboBox(this);
-    static const QString combo_facing_dir_toolTip = Util::toHtmlParagraph("The direction that the player must be facing to be able to interact with this event.");
+    static const QString combo_facing_dir_toolTip = Util::toHtmlParagraph("玩家与此事件交互时必须面向的方向。");
     this->combo_facing_dir->setToolTip(combo_facing_dir_toolTip);
-    l_form_facing_dir->addRow("Player Facing Direction", this->combo_facing_dir);
+    l_form_facing_dir->addRow("玩家朝向", this->combo_facing_dir);
     this->layout_contents->addLayout(l_form_facing_dir);
 
     // script combo
     QFormLayout *l_form_script = new QFormLayout();
     this->combo_script = new NoScrollComboBox(this);
-    static const QString combo_script_toolTip = Util::toHtmlParagraph("The script that is executed with this event.");
+    static const QString combo_script_toolTip = Util::toHtmlParagraph("与此事件关联的脚本。");
     this->combo_script->setToolTip(combo_script_toolTip);
-    l_form_script->addRow("Script", this->combo_script);
+    l_form_script->addRow("脚本", this->combo_script);
     this->layout_contents->addLayout(l_form_script);
 
     // custom attributes
@@ -906,15 +900,15 @@ void HiddenItemFrame::setup() {
     // item combo
     QFormLayout *l_form_item = new QFormLayout();
     this->combo_item = new NoScrollComboBox(this);
-    static const QString combo_item_toolTip = Util::toHtmlParagraph("The item to be given.");
+    static const QString combo_item_toolTip = Util::toHtmlParagraph("将要给予的道具。");
     this->combo_item->setToolTip(combo_item_toolTip);
-    l_form_item->addRow("Item", this->combo_item);
+    l_form_item->addRow("道具", this->combo_item);
     this->layout_contents->addLayout(l_form_item);
 
     // flag combo
     QFormLayout *l_form_flag = new QFormLayout();
     this->combo_flag = new NoScrollComboBox(this);
-    static const QString combo_flag_toolTip = Util::toHtmlParagraph("The flag that is set when the hidden item is picked up.");
+    static const QString combo_flag_toolTip = Util::toHtmlParagraph("当隐藏物品被拾取时设置的Flag。");
     this->combo_flag->setToolTip(combo_flag_toolTip);
     l_form_flag->addRow("Flag", this->combo_flag);
     this->layout_contents->addLayout(l_form_flag);
@@ -924,11 +918,11 @@ void HiddenItemFrame::setup() {
     QFormLayout *l_form_quantity = new QFormLayout(hideable_quantity);
     l_form_quantity->setContentsMargins(0, 0, 0, 0);
     this->spinner_quantity = new NoScrollSpinBox(hideable_quantity);
-    static const QString spinner_quantity_toolTip = Util::toHtmlParagraph("The number of items received when the hidden item is picked up.");
+    static const QString spinner_quantity_toolTip = Util::toHtmlParagraph("当隐藏物品被拾取时收到的物品数量。");
     this->spinner_quantity->setToolTip(spinner_quantity_toolTip);
     this->spinner_quantity->setMinimum(0x01);
     this->spinner_quantity->setMaximum(0xFF);
-    l_form_quantity->addRow("Quantity", this->spinner_quantity);
+    l_form_quantity->addRow("数量", this->spinner_quantity);
     this->layout_contents->addWidget(this->hideable_quantity);
 
     // itemfinder checkbox
@@ -936,9 +930,9 @@ void HiddenItemFrame::setup() {
     QFormLayout *l_form_itemfinder = new QFormLayout(hideable_itemfinder);
     l_form_itemfinder->setContentsMargins(0, 0, 0, 0);
     this->check_itemfinder = new QCheckBox(hideable_itemfinder);
-    static const QString check_itemfinder_toolTip = Util::toHtmlParagraph("If checked, hidden item can only be picked up using the Itemfinder");
+    static const QString check_itemfinder_toolTip = Util::toHtmlParagraph("如果勾选，隐藏物品只能使用道具探测仪拾取。");
     this->check_itemfinder->setToolTip(check_itemfinder_toolTip);
-    l_form_itemfinder->addRow("Requires Itemfinder", this->check_itemfinder);
+    l_form_itemfinder->addRow("需要道具探测仪", this->check_itemfinder);
     this->layout_contents->addWidget(hideable_itemfinder);
 
     // custom attributes
@@ -1024,10 +1018,9 @@ void SecretBaseFrame::setup() {
     // item combo
     QFormLayout *l_form_base_id = new QFormLayout();
     this->combo_base_id = new NoScrollComboBox(this);
-    static const QString combo_base_id_toolTip = Util::toHtmlParagraph("The secret base id that is inside this secret base entrance. "
-                                                                       "Secret base ids are meant to be unique to each and every secret base entrance.");
+    static const QString combo_base_id_toolTip = Util::toHtmlParagraph("此秘密基地入口内的秘密基地ID。每个秘密基地入口的ID都应该是唯一的。");
     this->combo_base_id->setToolTip(combo_base_id_toolTip);
-    l_form_base_id->addRow("Secret Base", this->combo_base_id);
+    l_form_base_id->addRow("秘密基地", this->combo_base_id);
     this->layout_contents->addLayout(l_form_base_id);
 
     // custom attributes
@@ -1076,7 +1069,7 @@ void HealLocationFrame::setup() {
     // ID
     QFormLayout *l_form_id = new QFormLayout();
     this->line_edit_id = new QLineEdit(this);
-    static const QString line_edit_id_toolTip = Util::toHtmlParagraph("The unique identifier for this heal location.");
+    static const QString line_edit_id_toolTip = Util::toHtmlParagraph("飞行点ID");
     this->line_edit_id->setToolTip(line_edit_id_toolTip);
     this->line_edit_id->setPlaceholderText(projectConfig.getIdentifier(ProjectIdentifier::define_heal_locations_prefix) + "MY_MAP");
     l_form_id->addRow("ID", this->line_edit_id);
@@ -1087,9 +1080,9 @@ void HealLocationFrame::setup() {
     QFormLayout *l_form_respawn_map = new QFormLayout(hideable_respawn_map);
     l_form_respawn_map->setContentsMargins(0, 0, 0, 0);
     this->combo_respawn_map = new NoScrollComboBox(hideable_respawn_map);
-    static const QString combo_respawn_map_toolTip = Util::toHtmlParagraph("The map where the player will respawn after whiteout.");
+    static const QString combo_respawn_map_toolTip = Util::toHtmlParagraph("玩家在失败后重生的地图。");
     this->combo_respawn_map->setToolTip(combo_respawn_map_toolTip);
-    l_form_respawn_map->addRow("Respawn Map", this->combo_respawn_map);
+    l_form_respawn_map->addRow("重生地图", this->combo_respawn_map);
     this->layout_contents->addWidget(hideable_respawn_map);
 
     // npc spinner
@@ -1097,10 +1090,9 @@ void HealLocationFrame::setup() {
     QFormLayout *l_form_respawn_npc = new QFormLayout(hideable_respawn_npc);
     l_form_respawn_npc->setContentsMargins(0, 0, 0, 0);
     this->combo_respawn_npc = new NoScrollComboBox(hideable_respawn_npc);
-    static const QString combo_respawn_npc_toolTip = Util::toHtmlParagraph("The Local ID name or number of the NPC the player "
-                                                                           "interacts with upon respawning after whiteout.");
+    static const QString combo_respawn_npc_toolTip = Util::toHtmlParagraph("玩家在失败重生后与之交互的NPC的人物ID名称或编号。");
     this->combo_respawn_npc->setToolTip(combo_respawn_npc_toolTip);
-    l_form_respawn_npc->addRow("Respawn NPC", this->combo_respawn_npc);
+    l_form_respawn_npc->addRow("重生 NPC", this->combo_respawn_npc);
     this->layout_contents->addWidget(hideable_respawn_npc);
 
     // custom attributes

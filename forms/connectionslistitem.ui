@@ -32,7 +32,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Map</string>
+      <string>地图</string>
      </property>
     </widget>
    </item>
@@ -45,7 +45,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Offset</string>
+      <string>偏移量</string>
      </property>
     </widget>
    </item>
@@ -58,14 +58,14 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Direction</string>
+      <string>方向</string>
      </property>
     </widget>
    </item>
    <item row="3" column="2">
     <widget class="QToolButton" name="button_Delete">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove this connection.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;删除此连接。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string>...</string>
@@ -79,28 +79,28 @@
    <item row="1" column="1" colspan="2">
     <widget class="NoScrollComboBox" name="comboBox_Direction">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Where the connected map should be positioned relative to the current map.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;连接地图相对于当前地图应被放置的位置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
    <item row="0" column="1" colspan="2">
     <widget class="NoScrollComboBox" name="comboBox_Map">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The name of the map to connect to the current map.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要连接到当前地图的地图名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
    <item row="2" column="1" colspan="2">
     <widget class="NoScrollSpinBox" name="spinBox_Offset">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of spaces to move the connected map perpendicular to its connected direction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;调整连接地图的垂直或水平偏移量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
    <item row="3" column="0">
     <widget class="QToolButton" name="button_OpenMap">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Open the connected map.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;打开连接的地图。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string>...</string>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add new Tileset</string>
+   <string>添加新 Tileset</string>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -35,7 +35,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_Name">
         <property name="text">
-         <string>Name</string>
+         <string>名称</string>
         </property>
        </widget>
       </item>
@@ -62,7 +62,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_Type">
         <property name="text">
-         <string>Type</string>
+         <string>类型</string>
         </property>
        </widget>
       </item>
@@ -86,14 +86,14 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label_CheckerboardFill">
         <property name="text">
-         <string>Checkerboard Fill</string>
+         <string>棋盘填充</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
        <widget class="QCheckBox" name="checkBox_CheckerboardFill">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If enabled, the metatiles in the new tileset will be filled alternately with tile 1 or tile 2. If not enabled, all the metatiles will be filled with tile 0.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果启用，新图块集中的地图块将使用图块1和图块2交替填充。如果未启用，所有地图块将使用图块0填充。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>

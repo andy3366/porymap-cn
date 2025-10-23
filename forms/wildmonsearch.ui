@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Wild Pokémon Search</string>
+   <string>搜索野生宝可梦位置</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

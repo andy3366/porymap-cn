@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Palette Color Search</string>
+   <string>调色板颜色搜索</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -79,7 +79,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Color</string>
+         <string>颜色</string>
         </property>
        </widget>
       </item>
@@ -99,7 +99,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Palette</string>
+         <string>调色板</string>
         </property>
        </widget>
       </item>

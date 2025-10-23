@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Color Picker</string>
+   <string>颜色选择器</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -190,7 +190,7 @@
    <item>
     <widget class="QLabel" name="label_SPACE">
      <property name="text">
-      <string>press [SPACE] to capture color</string>
+      <string>按 [空格键] 捕获颜色</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

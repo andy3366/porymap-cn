@@ -165,7 +165,7 @@ bool RegionMapEditor::buildConfigDialog() {
     poryjson::Json rmConfigJsonUpdate = this->rmConfigJson;
 
     QDialog dialog(this);
-    dialog.setWindowTitle("Configure Region Maps");
+    dialog.setWindowTitle("配置地区地图");
     dialog.setWindowModality(Qt::WindowModal);
 
     QFormLayout form(&dialog);
@@ -173,7 +173,7 @@ bool RegionMapEditor::buildConfigDialog() {
     // need to display current region map(s) if there are some
     QListWidget *regionMapList = new QListWidget(&dialog);
 
-    form.addRow(new QLabel("Region Map List:"));
+    form.addRow(new QLabel("地区地图列表:"));
     form.addRow(regionMapList);
 
     // lambda to update the current map list displayed in the config window with a
@@ -232,7 +232,7 @@ bool RegionMapEditor::buildConfigDialog() {
         }
     });
 
-    QPushButton *addMapButton = new QPushButton("Add Region Map...");
+    QPushButton *addMapButton = new QPushButton("添加地区地图...");
     form.addRow(addMapButton);
 
     // allow user to add region maps
@@ -251,7 +251,7 @@ bool RegionMapEditor::buildConfigDialog() {
         updateJsonFromList();
     });
 
-    QPushButton *delMapButton = new QPushButton("Delete Selected Region Map");
+    QPushButton *delMapButton = new QPushButton("删除所选地区地图");
     form.addRow(delMapButton);
 
     connect(delMapButton, &QPushButton::clicked, [regionMapList, &updateJsonFromList] {
@@ -286,13 +286,13 @@ bool RegionMapEditor::buildConfigDialog() {
     QPushButton *config_useProjectDefault = nullptr;
     switch (projectConfig.baseGameVersion) {
         case BaseGameVersion::pokefirered:
-            config_useProjectDefault = new QPushButton("\nUse pokefirered defaults\n");
+            config_useProjectDefault = new QPushButton("\n使用 pokefirered 默认设置\n");
             break;
         case BaseGameVersion::pokeemerald:
-            config_useProjectDefault = new QPushButton("\nUse pokeemerald defaults\n");
+            config_useProjectDefault = new QPushButton("\n使用 pokeemerald 默认设置\n");
             break;
         case BaseGameVersion::pokeruby:
-            config_useProjectDefault = new QPushButton("\nUse pokeruby defaults\n");
+            config_useProjectDefault = new QPushButton("\n使用 pokeruby 默认设置\n");
             break;
         default:
             break;
@@ -450,8 +450,8 @@ bool RegionMapEditor::load(bool silent) {
         // show popup explaining next window
         QMessageBox warning;
         warning.setIcon(QMessageBox::Warning);
-        warning.setText("Region map configuration not found.");
-        warning.setInformativeText("In order to continue, you must setup porymap to use your region map.");
+        warning.setText("未找到地区地图配置。");
+        warning.setInformativeText("要继续操作，您必须设置 porymap 以使用您的地区地图。");
         warning.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         warning.setDefaultButton(QMessageBox::Ok);
 

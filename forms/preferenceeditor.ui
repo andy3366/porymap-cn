@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Preferences</string>
+   <string>首选项</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -25,7 +25,7 @@
       </property>
       <widget class="QWidget" name="tab_General">
        <attribute name="title">
-        <string>General</string>
+        <string>通用</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <property name="leftMargin">
@@ -55,30 +55,30 @@
             <item>
              <widget class="QCheckBox" name="checkBox_MonitorProjectFiles">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, a prompt to reload your project will appear if relevant project files are edited&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，当相关项目文件被编辑时，将显示重新加载项目的提示。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
-               <string>Monitor project files</string>
+               <string>监控项目文件</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QCheckBox" name="checkBox_OpenRecentProject">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, Porymap will automatically open your most recently opened project on startup&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，Porymap 将在启动时自动打开您最近打开的项目。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
-               <string>Open recent project on launch</string>
+               <string>启动时打开最近的项目</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QCheckBox" name="checkBox_CheckForUpdates">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, Porymap will automatically alert you on startup if a new release is available&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，Porymap 将在启动时自动提示您是否有新版本可用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
-               <string>Automatically check for updates</string>
+               <string>自动检查更新</string>
               </property>
              </widget>
             </item>
@@ -91,14 +91,14 @@
                </sizepolicy>
               </property>
               <property name="title">
-               <string>Application Theme</string>
+               <string>主题</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QGroupBox" name="groupBox_Fonts">
               <property name="title">
-               <string>Fonts</string>
+               <string>字体</string>
               </property>
               <layout class="QGridLayout" name="gridLayout">
                <item row="3" column="0">
@@ -117,42 +117,42 @@
                <item row="2" column="2">
                 <widget class="QPushButton" name="pushButton_ResetMapListFont">
                  <property name="text">
-                  <string>Reset</string>
+                  <string>重置</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="1">
                 <widget class="QPushButton" name="pushButton_CustomizeMapListFont">
                  <property name="text">
-                  <string>Customize...</string>
+                  <string>自定义...</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="label_MapListFont">
                  <property name="text">
-                  <string>Map List Font</string>
+                  <string>地图列表字体</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="2">
                 <widget class="QPushButton" name="pushButton_ResetApplicationFont">
                  <property name="text">
-                  <string>Reset</string>
+                  <string>重置</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="QPushButton" name="pushButton_CustomizeApplicationFont">
                  <property name="text">
-                  <string>Customize...</string>
+                  <string>自定义...</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_ApplicationFont">
                  <property name="text">
-                  <string>Application Font</string>
+                  <string>应用字体</string>
                  </property>
                 </widget>
                </item>
@@ -175,34 +175,34 @@
             <item>
              <widget class="QGroupBox" name="groupBox_Logging">
               <property name="title">
-               <string>Logging</string>
+               <string>日志记录</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
                 <widget class="QLabel" name="label_StatusMessages">
                  <property name="text">
-                  <string>Status bar message types</string>
+                  <string>状态栏消息类型</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="checkBox_StatusErrors">
                  <property name="text">
-                  <string>Errors</string>
+                  <string>错误</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="checkBox_StatusWarnings">
                  <property name="text">
-                  <string>Warnings</string>
+                  <string>警告</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="checkBox_StatusInformation">
                  <property name="text">
-                  <string>Information</string>
+                  <string>消息</string>
                  </property>
                 </widget>
                </item>
@@ -230,7 +230,7 @@
       </widget>
       <widget class="QWidget" name="tab_Events">
        <attribute name="title">
-        <string>Events</string>
+        <string>事件</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <property name="leftMargin">
@@ -245,46 +245,46 @@
         <item>
          <widget class="QCheckBox" name="checkBox_DisableEventWarning">
           <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, no warning will be shown when deleting an event that has an associated #define that may also be deleted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，删除具有关联 #define 的事件时将不显示警告提示，相应的 #define 也可能被一并删除。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="text">
-           <string>Disable warning when deleting events with IDs</string>
+           <string>删除带ID的事件时不显示警告</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QGroupBox" name="groupBox_ScriptAutocomplete">
           <property name="title">
-           <string>Script label autocomplete</string>
+           <string>脚本标签自动补全</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
             <widget class="QRadioButton" name="radioButton_AutocompleteAllScripts">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, the list of suggestions when typing in an Event's Script field will include all global script labels in the project. This is the slowest option for Porymap's project opening.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果选中，在事件脚本字段中输入时，建议列表将包含项目中的所有全局脚本标签。这是Porymap项目打开速度最慢的选项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>All possible scripts</string>
+              <string>所有可能的脚本</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QRadioButton" name="radioButton_AutocompleteCommonScripts">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, the list of suggestions when typing in an Event's Script field will include script labels from the current map's scripts file, scripts in-use by the map's other events, and all script files in the &lt;span style=&quot; font-family:'SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New','Courier','monospace'; font-size:11px; color:#e74c3c; background-color:#ffffff;&quot;&gt;data_scripts_folders &lt;/span&gt;folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果选中，在事件脚本字段中输入时，建议列表将包含当前地图脚本文件中的脚本标签、地图其他事件正在使用的脚本，以及 &lt;span style=&quot; font-family:'SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New','Courier','monospace'; font-size:11px; color:#e74c3c; background-color:#ffffff;&quot;&gt;data_scripts_folders &lt;/span&gt;文件夹中的所有脚本文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>Current map, and global script files</string>
+              <string>当前地图及全局脚本文件</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QRadioButton" name="radioButton_AutocompleteMapScripts">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, the list of suggestions when typing in an Event's Script field will only include script labels from the current map's scripts file and scripts in-use by the map's other events. This is the fastest option for Porymap's project opening.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果选中，在事件脚本字段中输入时，建议列表将仅包含当前地图脚本文件中的脚本标签和地图其他事件正在使用的脚本。这是Porymap项目打开速度最快的选项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>Current map only</string>
+              <string>仅当前地图</string>
              </property>
             </widget>
            </item>
@@ -294,26 +294,26 @@
         <item>
          <widget class="QGroupBox" name="groupBox_EventSelectionMode">
           <property name="title">
-           <string>Selection Mode</string>
+           <string>选择模式</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_EventSelectionMode">
            <item>
             <widget class="QRadioButton" name="radioButton_OnSprite">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If enabled, an event can be selected by clicking directly on the opaque pixels of its sprite. This may be preferable when events are overlapping.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果启用，可通过直接点击事件人物的不透明像素来选择事件。当事件重叠时，此模式可能更适用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>Select by clicking on sprite</string>
+              <string>点击人物选择</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QRadioButton" name="radioButton_WithinRect">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If enabled, an event can be selected by clicking anywhere within its sprite dimensions. This may be preferable for events with small or mostly transparent sprites.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果启用，可通过点击事件人物尺寸范围内的任意位置来选择事件。对于人物较小或大部分透明的事件，此模式可能更适用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>Select by clicking within bounding rectangle</string>
+              <string>点击边框范围内选择</string>
              </property>
             </widget>
            </item>
@@ -337,7 +337,7 @@
       </widget>
       <widget class="QWidget" name="tab_TextEditor">
        <attribute name="title">
-        <string>Text Editor</string>
+        <string>文本编辑器</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <property name="leftMargin">
@@ -373,7 +373,7 @@
             <item row="6" column="0" colspan="2">
              <widget class="QLabel" name="label_TextEditorGotoLineHelp">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this command is set a button will appear next to the &lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Script&lt;/span&gt; combo-box in the &lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Events&lt;/span&gt; tab which executes this command.&lt;span style=&quot; font-weight:600;&quot;&gt; %F&lt;/span&gt; will be substituted with the file path of the script and &lt;span style=&quot; font-weight:600;&quot;&gt;%L&lt;/span&gt; will be substituted with the line number of the script in that file. &lt;span style=&quot; font-weight:600;&quot;&gt;%F &lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;must&lt;/span&gt; be given if &lt;span style=&quot; font-weight:600;&quot;&gt;%L&lt;/span&gt; is given. If &lt;span style=&quot; font-weight:600;&quot;&gt;%F&lt;/span&gt; is &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; given then the script's file path will be added to the end of the command. If the script can't be found then the current map's scripts file is opened.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置此命令后，&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;事件&lt;/span&gt;选项卡中&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;脚本&lt;/span&gt;组合框旁边将出现一个按钮，用于执行此命令。&lt;span style=&quot; font-weight:600;&quot;&gt;%F&lt;/span&gt;将被替换为脚本的文件路径，&lt;span style=&quot; font-weight:600;&quot;&gt;%L&lt;/span&gt;将被替换为该文件中脚本的行号。如果给出了&lt;span style=&quot; font-weight:600;&quot;&gt;%L&lt;/span&gt;，则&lt;span style=&quot; font-weight:600;&quot;&gt;%F&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;必须&lt;/span&gt;给出。如果&lt;span style=&quot; font-weight:600;&quot;&gt;%F&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;未&lt;/span&gt;给出，则脚本的文件路径将被添加到命令的末尾。如果找不到脚本，则打开当前地图的脚本文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -386,17 +386,17 @@
             <item row="5" column="0">
              <widget class="QLabel" name="label_TextEditorGotoLine">
               <property name="text">
-               <string>Goto Line Command</string>
+               <string>跳转到行命令</string>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="lineEdit_TextEditorOpenFolder">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The shell command for your preferred text editor (possibly an absolute path if the program doesn't exist in your PATH).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于打开您选择的文本编辑器的 shell 命令（如果程序不在PATH中，可能需要绝对路径）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="placeholderText">
-               <string>e.g. code %D</string>
+               <string>例如：code %D</string>
               </property>
               <property name="clearButtonEnabled">
                <bool>true</bool>
@@ -406,7 +406,7 @@
             <item row="1" column="0" colspan="2">
              <widget class="QLabel" name="label_TextEditorOpenFolderHelp">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the command that is executed when clicking &lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Open Project in Text Editor&lt;/span&gt; in the &lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Tools&lt;/span&gt; menu. &lt;span style=&quot; font-weight:600;&quot;&gt;%D&lt;/span&gt; will be substituted with the project's root directory. If &lt;span style=&quot; font-weight:600;&quot;&gt;%D&lt;/span&gt; is &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; specified then the project directory will be added to the end of the command.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;这是在&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;工具&lt;/span&gt;菜单中点击&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;在文本编辑器中打开项目&lt;/span&gt;时执行的命令。&lt;span style=&quot; font-weight:600;&quot;&gt;%D&lt;/span&gt;将被替换为项目的根目录。如果&lt;span style=&quot; font-weight:600;&quot;&gt;%D&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;未&lt;/span&gt;指定，则项目目录将被添加到命令的末尾。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -419,17 +419,17 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label_TextEditorOpenFolder">
               <property name="text">
-               <string>Open Directory Command</string>
+               <string>打开目录命令</string>
               </property>
              </widget>
             </item>
             <item row="5" column="1">
              <widget class="QLineEdit" name="lineEdit_TextEditorGotoLine">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The shell command for your preferred text editor to open a file to a specific line number (possibly an absolute path if the program doesn't exist in your PATH).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于在您选择的文本编辑器中打开文件并跳转到特定行号的 shell 命令（如果程序不在PATH中，可能需要绝对路径）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="placeholderText">
-               <string>e.g. code --goto %F:%L</string>
+               <string>例如：code --goto %F:%L</string>
               </property>
               <property name="clearButtonEnabled">
                <bool>true</bool>

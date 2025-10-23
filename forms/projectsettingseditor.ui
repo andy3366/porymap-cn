@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Project Settings</string>
+   <string>项目设置</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -25,7 +25,7 @@
       </property>
       <widget class="QWidget" name="tab_General">
        <attribute name="title">
-        <string>General</string>
+        <string>通用</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -46,36 +46,36 @@
             <item>
              <widget class="QGroupBox" name="groupBox_UserConfig">
               <property name="title">
-               <string>Preferences</string>
+               <string>首选项</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
                 <widget class="QCheckBox" name="checkBox_UsePoryscript">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether map script files should prefer using .pory&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;地图脚本文件是否应优先使用 .pory 扩展名&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Use Poryscript</string>
+                  <string>使用 Poryscript</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="checkBox_ShowWildEncounterTables">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If enabled, Porymap will display wild encounter data on the Wild Pokémon tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果启用，Porymap 将在野生宝可梦标签页中显示野生遭遇数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Show Wild Encounter Tables</string>
+                  <string>显示野生遭遇表</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QCheckBox" name="checkBox_PreserveMatchingOnlyData">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If enabled, Porymap will not discard data like &amp;quot;connections_include_order&amp;quot; or &amp;quot;name_clone&amp;quot;, which serve no purpose other than recreating the original game.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果启用，Porymap 将不会丢弃诸如&amp;quot;connections_include_order&amp;quot;或&amp;quot;name_clone&amp;quot;等数据，这些数据除了用于重现原版游戏外没有其他用途。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Preserve data only needed to match the original game</string>
+                  <string>保留原版冗余数据</string>
                  </property>
                 </widget>
                </item>
@@ -85,7 +85,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_Prefabs">
               <property name="title">
-               <string>Prefabs</string>
+               <string>预制件</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
                <item row="0" column="2">
@@ -102,17 +102,17 @@
                <item row="1" column="0">
                 <widget class="QPushButton" name="button_ImportDefaultPrefabs">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Restore the data in the prefabs file to the version defaults. Will create a new file if one doesn't exist.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将预制件文件中的数据恢复为默认值。如果文件不存在，将创建一个新文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Import Defaults</string>
+                  <string>导入默认预制件</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="lineEdit_PrefabsPath">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The file that will be used to populate the Prefabs tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;存储预制地图块数据的文件&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="placeholderText">
                   <string>prefabs.json</string>
@@ -122,7 +122,7 @@
                <item row="0" column="0">
                 <widget class="QLabel" name="label_PrefabsPath">
                  <property name="text">
-                  <string>Prefabs Path</string>
+                  <string>预制件路径</string>
                  </property>
                 </widget>
                </item>
@@ -132,7 +132,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_CollisionGraphics">
               <property name="title">
-               <string>Collision Graphics</string>
+               <string>运动许可图片</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_7">
                <item row="1" column="6">
@@ -151,7 +151,7 @@
                <item row="0" column="1" colspan="6">
                 <widget class="QLineEdit" name="lineEdit_CollisionGraphics">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The image sheet that will be used to represent elevation and collision on the Collision tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将在运动许可标签页中用于表示高度和运动许可的图片集&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -172,35 +172,35 @@
                <item row="1" column="0">
                 <widget class="QLabel" name="label_MaxElevation">
                  <property name="text">
-                  <string>Max Elevation</string>
+                  <string>最大高度</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="5">
                 <widget class="NoScrollSpinBox" name="spinBox_MaxCollision">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The maximum collision value represented with an icon on the image sheet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在图片集中用图标表示的最大运动许可值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="4">
                 <widget class="QLabel" name="label_MaxCollision">
                  <property name="text">
-                  <string>Max Collision</string>
+                  <string>最大运动许可</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_CollisionImagePath">
                  <property name="text">
-                  <string>Image Path</string>
+                  <string>图片路径</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="2">
                 <widget class="NoScrollSpinBox" name="spinBox_MaxElevation">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The maximum elevation value represented with an icon on the image sheet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在图片集中用图标表示的最大高度值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -226,7 +226,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_PokemonIcons">
               <property name="title">
-               <string>Pokémon Icons</string>
+               <string>宝可梦图标</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_8">
                <item row="0" column="0">
@@ -238,7 +238,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Species</string>
+                  <string>种类</string>
                  </property>
                 </widget>
                </item>
@@ -266,14 +266,14 @@
                <item row="1" column="0">
                 <widget class="QLabel" name="label_PokemonIcon">
                  <property name="text">
-                  <string>Image Path</string>
+                  <string>图片路径</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="2" colspan="3">
                 <widget class="QLineEdit" name="lineEdit_PokemonIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be displayed on the Wild Pokémon tab for the above species&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将在野生宝可梦标签页中为上述种类显示的图标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -286,7 +286,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_PlayerViewDistance">
               <property name="title">
-               <string>Player View Distance</string>
+               <string>玩家视野距离</string>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item>
@@ -294,21 +294,21 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_PlayerViewDistance_North">
                    <property name="text">
-                    <string>North</string>
+                    <string>北</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_PlayerViewDistance_South">
                    <property name="text">
-                    <string>South</string>
+                    <string>南</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_PlayerViewDistance_North">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The distance (in pixels) that a player is able to see North of their character's position in-game. By default this is the distance from the center 16x16 to the edge of the 160 pixel tall GBA screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;玩家在游戏中能够看到其角色位置以北的距离（以像素为单位）。默认情况下，这是从中心16x16像素区域到160像素高的GBA屏幕边缘的距离。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="minimum">
                     <number>0</number>
@@ -318,7 +318,7 @@
                  <item row="1" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_PlayerViewDistance_South">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The distance (in pixels) that a player is able to see South of their character's position in-game. By default this is the distance from the center 16x16 to the edge of the 160 pixel tall GBA screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;玩家在游戏中能够看到其角色位置以南的距离（以像素为单位）。默认情况下，这是从中心16x16像素区域到160像素高的GBA屏幕边缘的距离。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="minimum">
                     <number>0</number>
@@ -332,21 +332,21 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_PlayerViewDistance_West">
                    <property name="text">
-                    <string>West</string>
+                    <string>西</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_PlayerViewDistance_East">
                    <property name="text">
-                    <string>East</string>
+                    <string>东</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_PlayerViewDistance_West">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The distance (in pixels) that a player is able to see West of their character's position in-game. By default this is the distance from the center 16x16 to the edge of the 240 pixel wide GBA screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;玩家在游戏中能够看到其角色位置以西的距离（以像素为单位）。默认情况下，这是从中心16x16像素区域到240像素宽的GBA屏幕边缘的距离。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="minimum">
                     <number>0</number>
@@ -356,7 +356,7 @@
                  <item row="1" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_PlayerViewDistance_East">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The distance (in pixels) that a player is able to see East of their character's position in-game. By default this is the distance from the center 16x16 to the edge of the 240 pixel wide GBA screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;玩家在游戏中能够看到其角色位置以东的距离（以像素为单位）。默认情况下，这是从中心16x16像素区域到240像素宽的GBA屏幕边缘的距离。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="minimum">
                     <number>0</number>
@@ -389,7 +389,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;WARNING:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The settings from this point below require project changes to function properly. Do not modify these settings without the necessary changes. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;警告:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;修改以下设置需同步更改项目代码，非必要请勿修改以下设置。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -402,7 +402,7 @@
                   <item>
                    <widget class="QLabel" name="label_BaseGameVersion">
                     <property name="text">
-                     <string>Base game version</string>
+                     <string>基础游戏版本</string>
                     </property>
                    </widget>
                   </item>
@@ -453,7 +453,7 @@
       </widget>
       <widget class="QWidget" name="tab_Maps">
        <attribute name="title">
-        <string>Maps</string>
+        <string>地图</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_17">
         <item>
@@ -474,16 +474,16 @@
             <item>
              <widget class="QGroupBox" name="groupBox_NewMapDefaults">
               <property name="title">
-               <string>New Map Defaults</string>
+               <string>新建地图默认设置</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
                <item row="8" column="0" colspan="2">
                 <widget class="QCheckBox" name="checkBox_CreateTextFile">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether a separate text.inc or text.pory file will be created for new maps, alongside the scripts file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否为新建地图创建单独的text.inc或text.pory文件，与脚本文件并存&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Create separate text file</string>
+                  <string>创建单独文本文件</string>
                  </property>
                 </widget>
                </item>
@@ -506,7 +506,7 @@
                    <item>
                     <widget class="QLineEdit" name="lineEdit_BorderMetatiles">
                      <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A comma-separated list of metatile values that will be used to fill new map borders&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于填充新建地图边缘的地图块值的逗号分隔列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                     </widget>
                    </item>
@@ -529,28 +529,28 @@
                    <item>
                     <widget class="UIntHexSpinBox" name="spinBox_BorderMetatile1">
                      <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default metatile value that will be used for the top-left border metatile on new maps.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于新建地图左上角边缘地图块的默认地图块值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                     </widget>
                    </item>
                    <item>
                     <widget class="UIntHexSpinBox" name="spinBox_BorderMetatile2">
                      <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default metatile value that will be used for the top-right border metatile on new maps.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于新建地图右上角边缘地图块的默认地图块值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                     </widget>
                    </item>
                    <item>
                     <widget class="UIntHexSpinBox" name="spinBox_BorderMetatile3">
                      <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default metatile value that will be used for the bottom-left border metatile on new maps.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于新建地图左下角边缘地图块的默认地图块值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                     </widget>
                    </item>
                    <item>
                     <widget class="UIntHexSpinBox" name="spinBox_BorderMetatile4">
                      <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default metatile value that will be used for the bottom-right border metatile on new maps.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于新建地图右下角边缘地图块的默认地图块值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                     </widget>
                    </item>
@@ -563,14 +563,14 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_MapWidth">
                    <property name="text">
-                    <string>Width</string>
+                    <string>宽度</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_MapWidth">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default layout width for new maps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新建地图的默认布局宽度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="minimum">
                     <number>1</number>
@@ -580,14 +580,14 @@
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_MapHeight">
                    <property name="text">
-                    <string>Height</string>
+                    <string>高度</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_MapHeight">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default layout height for new maps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新建地图的默认布局高度新建地图的默认布局高度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="minimum">
                     <number>1</number>
@@ -599,7 +599,7 @@
                <item row="0" column="0">
                 <widget class="QLabel" name="label_BorderMetatiles">
                  <property name="text">
-                  <string>Border Metatiles</string>
+                  <string>边缘地图块</string>
                  </property>
                 </widget>
                </item>
@@ -621,7 +621,7 @@
                   <item>
                    <widget class="UIntHexSpinBox" name="spinBox_FillMetatile">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default metatile value that will be used to fill new maps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于填充新建地图的默认地图块值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -633,28 +633,28 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_Elevation">
                    <property name="text">
-                    <string>Elevation</string>
+                    <string>高度</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_Collision">
                    <property name="text">
-                    <string>Collision</string>
+                    <string>运动许可</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_Collision">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default collision that will be used to fill new maps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于填充新建地图的默认运动许可&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="NoScrollSpinBox" name="spinBox_Elevation">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default elevation that will be used to fill new maps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于填充新建地图的默认高度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -663,7 +663,7 @@
                <item row="1" column="0">
                 <widget class="QLabel" name="label_FillMetatile">
                  <property name="text">
-                  <string>Metatile ID</string>
+                  <string>地图块 ID</string>
                  </property>
                 </widget>
                </item>
@@ -691,7 +691,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;WARNING:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The settings from this point below require project changes to function properly. Do not modify these settings without the necessary changes. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;警告:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;修改以下设置需同步更改项目代码，非必要请勿修改以下设置。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -701,48 +701,48 @@
                <item>
                 <widget class="QGroupBox" name="groupBox_MapDataLayout">
                  <property name="title">
-                  <string>Map Data Layout</string>
+                  <string>地图数据结构</string>
                  </property>
                  <layout class="QFormLayout" name="formLayout">
                   <item row="0" column="0">
                    <widget class="QLabel" name="label_MetatileIdMask">
                     <property name="text">
-                     <string>Metatile ID</string>
+                     <string>地图块 ID</string>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_MetatileIdMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write metatile IDs in map data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于在地图数据中读取/写入地图块ID的掩码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="0">
                    <widget class="QLabel" name="label_CollisionMask">
                     <property name="text">
-                     <string>Collision</string>
+                     <string>运动许可</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_CollisionMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write collision values in map data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于在地图数据中读取/写入运动许可值的掩码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item row="2" column="0">
                    <widget class="QLabel" name="label_ElevationMask">
                     <property name="text">
-                     <string>Elevation</string>
+                     <string>高度</string>
                     </property>
                    </widget>
                   </item>
                   <item row="2" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_ElevationMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write elevation values in map data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于在地图数据中读取/写入高度值的掩码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -752,7 +752,7 @@
                      <string notr="true">color : red;</string>
                     </property>
                     <property name="text">
-                     <string>These masks have overlapping bits. This may result in unexpected value changes.</string>
+                     <string>这些掩码存在重叠位，可能导致意外值变化。</string>
                     </property>
                     <property name="wordWrap">
                      <bool>true</bool>
@@ -765,36 +765,36 @@
                <item>
                 <widget class="QGroupBox" name="groupBox_MapFields">
                  <property name="title">
-                  <string>Fields</string>
+                  <string>功能设置</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout">
                   <item row="0" column="1">
                    <widget class="QCheckBox" name="checkBox_EnableAllowFlags">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether &amp;quot;Allow Running&amp;quot;, &amp;quot;Allow Biking&amp;quot; and &amp;quot;Allow Dig &amp;amp; Escape Rope&amp;quot; are default options for Map Headers&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否将&amp;quot;允许跑步&amp;quot;、&amp;quot;允许骑行&amp;quot;和&amp;quot;允许挖洞&amp;amp;穿洞绳&amp;quot;设置为地图头的默认选项&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
-                     <string>Enable 'Allow Running/Biking/Escaping'</string>
+                     <string>启用'允许跑步/骑行/逃脱'默认选项</string>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="0">
                    <widget class="QCheckBox" name="checkBox_EnableFloorNumber">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether &amp;quot;Floor Number&amp;quot; is a default option for Map Headers&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否将&amp;quot;楼层编号&amp;quot;设置为地图头的默认选项&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
-                     <string>Enable 'Floor Number'</string>
+                     <string>启用'楼层编号'</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="0">
                    <widget class="QCheckBox" name="checkBox_EnableCustomBorderSize">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether the dimensions of the border can be changed. If not set, all borders are 2x2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否可以更改边缘的尺寸。如果未设置，所有边缘均为2x2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
-                     <string>Enable Custom Border Size</string>
+                     <string>启用自定义边缘尺寸</string>
                     </property>
                    </widget>
                   </item>
@@ -859,7 +859,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_DefaultTilesets">
               <property name="title">
-               <string>Default Tilesets</string>
+               <string>默认 Tilesets</string>
               </property>
               <layout class="QFormLayout" name="formLayout_2">
                <item row="0" column="0">
@@ -872,7 +872,7 @@
                <item row="0" column="1">
                 <widget class="NoScrollComboBox" name="comboBox_DefaultPrimaryTileset">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default primary tileset to use for new maps/layouts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于新建地图/布局的默认主图块集。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -886,7 +886,7 @@
                <item row="1" column="1">
                 <widget class="NoScrollComboBox" name="comboBox_DefaultSecondaryTileset">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The default secondary tileset to use for new maps/layouts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于新建地图/布局的默认副图块集。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -896,26 +896,26 @@
             <item>
              <widget class="QGroupBox" name="groupBox_TransparentPixelRendering">
               <property name="title">
-               <string>Transparent Pixel Rendering</string>
+               <string>透明像素渲染</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_22">
                <item>
                 <widget class="QRadioButton" name="radioButton_RenderBlack">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fully transparent pixels will be rendered as black pixels (the Pokémon games do this by default)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;完全透明的像素将渲染为黑色像素（宝可梦游戏默认这样做）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Render as black</string>
+                  <string>渲染为黑色</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QRadioButton" name="radioButton_RenderFirstPalColor">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fully transparent pixels will be rendered using the first palette color (this the default behavior for the GBA)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;完全透明的像素将使用第一个调色板颜色渲染（这是GBA的默认行为）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Render using first palette color</string>
+                  <string>使用第一个调色板颜色渲染</string>
                  </property>
                 </widget>
                </item>
@@ -925,48 +925,48 @@
             <item>
              <widget class="QGroupBox" name="groupBox_UnusedLayerRendering">
               <property name="title">
-               <string>Unused Layer Rendering</string>
+               <string>未使用图层渲染</string>
               </property>
               <layout class="QFormLayout" name="formLayout_3">
                <item row="0" column="0">
                 <widget class="QLabel" name="label_UnusedTileNorma">
                  <property name="text">
-                  <string>Normal</string>
+                  <string>普通</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="UIntHexSpinBox" name="spinBox_UnusedTileNormal">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This raw tile value will be used to fill the unused bottom layer of Normal metatiles&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此原始图块值将用于填充普通地图块的未使用底层&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="label_UnusedTileCovered">
                  <property name="text">
-                  <string>Covered</string>
+                  <string>覆盖</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="1">
                 <widget class="UIntHexSpinBox" name="spinBox_UnusedTileCovered">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This raw tile value will be used to fill the unused top layer of Covered metatiles&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此原始图块值将用于填充覆盖地图块的未使用顶层&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="label_UnusedTileSplit">
                  <property name="text">
-                  <string>Split</string>
+                  <string>分割</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="1">
                 <widget class="UIntHexSpinBox" name="spinBox_UnusedTileSplit">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This raw tile value will be used to fill the unused middle layer of Split metatiles&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此原始图块值将用于填充分割地图块的未使用中间层&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -978,14 +978,14 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label_MetatileSelectorWidth">
                 <property name="text">
-                 <string>Metatile Selector Width</string>
+                 <string>地图块选择器宽度</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="1">
                <widget class="NoScrollSpinBox" name="spinBox_MetatileSelectorWidth">
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The width (in metatiles) of the metatile selectors on the Map tab and in the Tileset Editor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;地图标签页和Tileset 编辑器中地图块选择器的宽度（以地图块为单位）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="minimum">
                  <number>1</number>
@@ -1015,7 +1015,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;WARNING:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The settings from this point below require project changes to function properly. Do not modify these settings without the necessary changes. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;警告:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;修改以下设置需同步更改项目代码，非必要请勿修改以下设置。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -1025,27 +1025,27 @@
                <item>
                 <widget class="QGroupBox" name="groupBox_Metatiles">
                  <property name="title">
-                  <string>Metatiles</string>
+                  <string>地图块</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
                   <item row="4" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_LayerTypeMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write Layer Type from the metatile's attributes data. If 0, this attribute is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于从地图块属性数据中读取/写入图层类型的掩码。如果为0，则此属性被禁用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_BehaviorMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write Metatile Behavior from the metatile's attributes data. If 0, this attribute is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于从地图块属性数据中读取/写入地图块行为的掩码。如果为0，则此属性被禁用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item row="2" column="0">
                    <widget class="QLabel" name="label_AttributesSize">
                     <property name="text">
-                     <string>Attributes size (in bytes)</string>
+                     <string>属性大小（以字节为单位）</string>
                     </property>
                    </widget>
                   </item>
@@ -1068,31 +1068,31 @@
                   <item row="5" column="0">
                    <widget class="QLabel" name="label_EncounterTypeMask">
                     <property name="text">
-                     <string>Encounter Type mask</string>
+                     <string>遭遇类型掩码</string>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="0">
                    <widget class="QCheckBox" name="checkBox_EnableTripleLayerMetatiles">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, metatiles will be interpreted as having 3 layers of 4 tiles each (12 tiles total) as opposed to the default 2 layers of 4 tiles each (8 total).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，地图块将被解释为具有3个图层，每个图层4个图块（共12个图块），而不是默认的2个图层每个图层4个图块（共8个图块）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
-                     <string>Enable Triple Layer Metatiles</string>
+                     <string>启用三图层地图块</string>
                     </property>
                    </widget>
                   </item>
                   <item row="7" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_TerrainTypeMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write Terrain Type from the metatile's attributes data. If 0, this attribute is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于从地图块属性数据中读取/写入地形类型的掩码。如果为0，则此属性被禁用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="0">
                    <widget class="QLabel" name="label_BehaviorMask">
                     <property name="text">
-                     <string>Behavior mask</string>
+                     <string>行为掩码</string>
                     </property>
                    </widget>
                   </item>
@@ -1102,7 +1102,7 @@
                      <string notr="true">color : red;</string>
                     </property>
                     <property name="text">
-                     <string>These masks have overlapping bits. This may result in unexpected value changes.</string>
+                     <string>这些掩码存在重叠位，可能导致意外值变化。</string>
                     </property>
                     <property name="wordWrap">
                      <bool>true</bool>
@@ -1112,21 +1112,21 @@
                   <item row="5" column="1">
                    <widget class="UIntHexSpinBox" name="spinBox_EncounterTypeMask">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The mask used to read/write Encounter Type from the metatile's attributes data. If 0, this attribute is disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于从地图块属性数据中读取/写入遭遇类型的掩码。如果为0，则此属性被禁用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item row="4" column="0">
                    <widget class="QLabel" name="label_LayerTypeMask">
                     <property name="text">
-                     <string>Layer Type mask</string>
+                     <string>图层类型掩码</string>
                     </property>
                    </widget>
                   </item>
                   <item row="2" column="1">
                    <widget class="NoScrollComboBox" name="comboBox_AttributesSize">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of bytes each metatile has for metatile attributes. This is the metadata about each metatile like behvior, layer type, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;每个地图块用于地图块属性的字节数。这是关于每个地图块的元数据，如交互类型、图层类型等。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="editable">
                      <bool>false</bool>
@@ -1136,7 +1136,7 @@
                   <item row="7" column="0">
                    <widget class="QLabel" name="label_TerrainTypeMask">
                     <property name="text">
-                     <string>Terrain Type mask</string>
+                     <string>地形类型掩码</string>
                     </property>
                    </widget>
                   </item>
@@ -1162,26 +1162,26 @@
                <item>
                 <widget class="QGroupBox" name="groupBox_DataOutput">
                  <property name="title">
-                  <string>Data Output</string>
+                  <string>数据输出</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
                   <item>
                    <widget class="QCheckBox" name="checkBox_OutputCallback">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether the C data outputted for new tilesets will include the &amp;quot;callback&amp;quot; field&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否为新的图块集输出的C数据包含&amp;quot;callback&amp;quot;字段&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
-                     <string>Output 'callback' field</string>
+                     <string>输出'callback'字段</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QCheckBox" name="checkBox_OutputIsCompressed">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether the C data outputted for new tilesets will include the &amp;quot;isCompressed&amp;quot; field&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否为新的图块集输出的C数据包含&amp;quot;isCompressed&amp;quot;字段&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="text">
-                     <string>Output 'isCompressed' field</string>
+                     <string>输出'isCompressed'字段</string>
                     </property>
                    </widget>
                   </item>
@@ -1212,7 +1212,7 @@
       </widget>
       <widget class="QWidget" name="tab_Events">
        <attribute name="title">
-        <string>Events</string>
+        <string>事件</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
@@ -1233,7 +1233,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_EventsTabIcon">
               <property name="title">
-               <string>Tab Icon</string>
+               <string>标签页图标</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
                <item row="1" column="1">
@@ -1256,7 +1256,7 @@
                   <bool>false</bool>
                  </property>
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The image file path to use for the icon of the Events tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;事件标签页所使用的图标图片文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -1266,7 +1266,7 @@
                <item row="0" column="0" colspan="2">
                 <widget class="NoScrollComboBox" name="comboBox_EventsTabIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be displayed for the Events tab in the editor. If 'Automatic' is chosen, the icon will be a random player character from the project's base game version. If 'Custom' is chosen an image file path may be specified.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将在编辑器中为事件标签页显示的图标。如果选择Automatic，图标将随机使用项目基础游戏版本中的玩家角色；如果选择Custom，则可以指定图片文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="editable">
                   <bool>false</bool>
@@ -1279,20 +1279,20 @@
             <item>
              <widget class="QGroupBox" name="groupBox_DefaultIcons">
               <property name="title">
-               <string>Default Icons</string>
+               <string>默认图标</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_6">
                <item row="1" column="0">
                 <widget class="QLabel" name="label_WarpsIcon">
                  <property name="text">
-                  <string>Warps</string>
+                  <string>出入口</string>
                  </property>
                 </widget>
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="lineEdit_BGsIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be used to represent BG events&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将用于表示标志事件的图标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -1313,21 +1313,21 @@
                <item row="0" column="0">
                 <widget class="QLabel" name="label_ObjectsIcon">
                  <property name="text">
-                  <string>Objects</string>
+                  <string>人物事件</string>
                  </property>
                 </widget>
                </item>
                <item row="3" column="0">
                 <widget class="QLabel" name="label_BGsIcon">
                  <property name="text">
-                  <string>BGs</string>
+                  <string>标志</string>
                  </property>
                 </widget>
                </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="label_TriggersIcon">
                  <property name="text">
-                  <string>Triggers</string>
+                  <string>陷阱</string>
                  </property>
                 </widget>
                </item>
@@ -1345,14 +1345,14 @@
                <item row="4" column="0">
                 <widget class="QLabel" name="label_HealLocationsIcon">
                  <property name="text">
-                  <string>Heal Locations</string>
+                  <string>飞行点</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="lineEdit_ObjectsIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be used to represent Object events that don't have their own sprite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将用于表示没有自己图像的人物事件的图标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -1362,7 +1362,7 @@
                <item row="1" column="1">
                 <widget class="QLineEdit" name="lineEdit_WarpsIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be used to represent Warp events&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将用于表示出入口事件的图标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -1383,7 +1383,7 @@
                <item row="4" column="1">
                 <widget class="QLineEdit" name="lineEdit_HealLocationsIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be used to represent Heal Location events&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将用于表示飞行点事件的图标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -1415,7 +1415,7 @@
                <item row="2" column="1">
                 <widget class="QLineEdit" name="lineEdit_TriggersIcon">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The icon that will be used to represent Trigger events&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将用于表示陷阱事件的图标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="clearButtonEnabled">
                   <bool>true</bool>
@@ -1428,13 +1428,13 @@
             <item>
              <widget class="QGroupBox" name="groupBox_WarpBehaviors">
               <property name="title">
-               <string>Warp Behaviors</string>
+               <string>出入口行为</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_9">
                <item row="1" column="2">
                 <widget class="QToolButton" name="button_RemoveWarpBehavior">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the current text from the list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从列表中移除当前文本&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
                   <string>...</string>
@@ -1448,7 +1448,7 @@
                <item row="3" column="0" colspan="3">
                 <widget class="QLabel" name="label_WarpBehaviors">
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Porymap will display a warning on Warp Events if they are not positioned on a metatile with one of these behaviors. This list is purely for the warning and &lt;b&gt;will have no effect on your game&lt;/b&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果出入口事件未位于具有这些行为之一的地图块上，Porymap将显示警告。此列表仅用于警告目的，&lt;b&gt;不会对游戏产生任何影响&lt;/b&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -1458,10 +1458,10 @@
                <item row="0" column="0" colspan="3">
                 <widget class="QCheckBox" name="checkBox_DisableWarning">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, Warp Events will not display a warning about incompatible metatile behaviors&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，出入口事件将不会显示关于不兼容地图块行为的警告&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
-                  <string>Disable Warning</string>
+                  <string>关闭警告</string>
                  </property>
                 </widget>
                </item>
@@ -1471,7 +1471,7 @@
                <item row="4" column="0" colspan="3">
                 <widget class="NoScrollTextEdit" name="textEdit_WarpBehaviors">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Metatile Behaviors on this list won't trigger warnings for Warp Events&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此列表中的地图块行为不会触发出入口事件的警告&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="readOnly">
                   <bool>true</bool>
@@ -1480,14 +1480,14 @@
                   <set>Qt::TextInteractionFlag::NoTextInteraction</set>
                  </property>
                  <property name="placeholderText">
-                  <string>Use the dropbown and buttons to add behaviors to the list...</string>
+                  <string>使用下拉菜单和按钮将行为添加到列表...</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="1">
                 <widget class="QToolButton" name="button_AddWarpBehavior">
                  <property name="toolTip">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add the current text to the list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将当前文本添加到列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="text">
                   <string>...</string>
@@ -1522,7 +1522,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;WARNING:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The settings from this point below require project changes to function properly. Do not modify these settings without the necessary changes. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;警告:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;修改以下设置需同步更改项目代码，非必要请勿修改以下设置。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -1535,14 +1535,14 @@
                   <item row="0" column="0">
                    <widget class="QLabel" name="label_MaxEvents">
                     <property name="text">
-                     <string>Maximum Events per Event group</string>
+                     <string>每个事件组的最大事件数</string>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="1">
                    <widget class="NoScrollSpinBox" name="spinBox_MaxEvents">
                     <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Maps cannot have more than this number of events in each event group. Object events are additionally limited by 'define_obj_event_count' on the Identifiers tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;地图在每个事件组中不能拥有超过此数量的事件。人物事件还受到标识符标签页中'define_obj_event_count'的限制。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                     <property name="minimum">
                      <number>1</number>
@@ -1561,42 +1561,42 @@
                   <item row="2" column="0">
                    <widget class="QCheckBox" name="checkBox_EnableWeatherTriggers">
                     <property name="text">
-                     <string>Enable Weather Triggers</string>
+                     <string>启用 Weather Triggers</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="0">
                    <widget class="QCheckBox" name="checkBox_EnableSecretBases">
                     <property name="text">
-                     <string>Enable Secret Bases</string>
+                     <string>启用 Secret Bases</string>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="0">
                    <widget class="QCheckBox" name="checkBox_EnableCloneObjects">
                     <property name="text">
-                     <string>Enable Clone Objects</string>
+                     <string>启用 Clone Objects</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="1">
                    <widget class="QCheckBox" name="checkBox_EnableRequiresItemfinder">
                     <property name="text">
-                     <string>Enable 'Requires Itemfinder' for Hidden Items</string>
+                     <string>为 Hidden Items 启用'需要道具探测仪'</string>
                     </property>
                    </widget>
                   </item>
                   <item row="0" column="1">
                    <widget class="QCheckBox" name="checkBox_EnableQuantity">
                     <property name="text">
-                     <string>Enable 'Quantity' for Hidden Items</string>
+                     <string>为 Hidden Items 启用'数量'</string>
                     </property>
                    </widget>
                   </item>
                   <item row="2" column="1">
                    <widget class="QCheckBox" name="checkBox_EnableRespawn">
                     <property name="text">
-                     <string>Enable 'Respawn Map/NPC' for Heal Locations</string>
+                     <string>为 Heal Locations 启用'重生地图/NPC'</string>
                     </property>
                    </widget>
                   </item>
@@ -1640,7 +1640,7 @@
       </widget>
       <widget class="QWidget" name="tab_Files">
        <attribute name="title">
-        <string>Files</string>
+        <string>文件</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
@@ -1726,10 +1726,10 @@
             <item row="0" column="2">
              <widget class="QPushButton" name="button_AddGlobalConstantsFile">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add additional C files containing #defines or enums. These will be used to resolve unknown symbols during project launch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;添加包含#define或enum的额外C文件。这些文件将在项目启动时用于解析未知符号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
-               <string>Add Global Constants File...</string>
+               <string>添加全局常量文件...</string>
               </property>
               <property name="icon">
                <iconset resource="../resources/images.qrc">
@@ -1759,7 +1759,7 @@
       </widget>
       <widget class="QWidget" name="tab_Identifiers">
        <attribute name="title">
-        <string>Identifiers</string>
+        <string>标识符</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_21">
         <item>
@@ -1843,10 +1843,10 @@
             <item row="0" column="2">
              <widget class="QPushButton" name="button_AddGlobalConstant">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add an additional #define name and expression. This may be used to evaluate other #defines during project launch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;添加额外的#define名称和表达式。这可用于在项目启动时评估其他#define。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
-               <string>Add Global Constant...</string>
+               <string>添加全局常量...</string>
               </property>
               <property name="icon">
                <iconset resource="../resources/images.qrc">

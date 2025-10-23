@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Export Metatiles Image</string>
+   <string>导出地图块图像</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -74,7 +74,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_Tilesets">
             <property name="title">
-             <string>Tilesets</string>
+             <string>Tileset</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_2">
              <property name="topMargin">
@@ -86,7 +86,7 @@
              <item row="1" column="0">
               <widget class="QCheckBox" name="checkBox_SecondaryTileset">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, automatically update the metatile range to include the full secondary tileset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，将自动更新地图块范围以包含完整的副图块集。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>Secondary Tileset</string>
@@ -116,7 +116,7 @@
              <item row="0" column="0">
               <widget class="QCheckBox" name="checkBox_PrimaryTileset">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, automatically update the metatile range to include the full primary tileset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，将自动更新地图块范围以包含完整的主图块集。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>Primary Tileset</string>
@@ -148,7 +148,7 @@
              <bool>false</bool>
             </property>
             <property name="title">
-             <string>Metatile Range</string>
+             <string>地图块范围</string>
             </property>
             <layout class="QFormLayout" name="formLayout_2">
              <property name="topMargin">
@@ -160,28 +160,28 @@
              <item row="0" column="0">
               <widget class="QLabel" name="label_MetatileStart">
                <property name="text">
-                <string>Start</string>
+                <string>开始</string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
               <widget class="UIntHexSpinBox" name="spinBox_MetatileStart">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The metatile ID to start the rendered image at.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;渲染图像起始的地图块ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item row="2" column="0">
               <widget class="QLabel" name="label_MetatileEnd">
                <property name="text">
-                <string>End</string>
+                <string>结束</string>
                </property>
               </widget>
              </item>
              <item row="2" column="1">
               <widget class="UIntHexSpinBox" name="spinBox_MetatileEnd">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The metatile ID to end the rendered image at.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;渲染图像结束的地图块ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -191,10 +191,10 @@
           <item>
            <widget class="QGroupBox" name="groupBox_Layers">
             <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Each metatile consists of 3 layers of tiles. These layers can be toggled here by clicking the checkbox, or rearranged by clicking and dragging them up or down in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;每个地图块由3层图块组成。可通过点击复选框来切换这些图层的显示状态，或通过点击并在列表中上下拖动来重新排列图层顺序。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="title">
-             <string>Layers</string>
+             <string>图层</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <property name="leftMargin">
@@ -249,36 +249,36 @@
           <item>
            <widget class="QGroupBox" name="groupBox_Transparency">
             <property name="title">
-             <string>Transparency</string>
+             <string>透明度</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <item>
               <widget class="QRadioButton" name="radioButton_TransparencyNormal">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, transparent pixels in the image will be rendered with alpha of 0.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，图像中的透明像素将以Alpha值为0的方式渲染（完全透明）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>Normal</string>
+                <string>标准透明度</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QRadioButton" name="radioButton_TransparencyBlack">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, transparent pixels in the image will be rendered as black. This is the default in-game behavior.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，图像中的透明像素将渲染为黑色。这是游戏内的默认行为。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>Black</string>
+                <string>黑色</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QRadioButton" name="radioButton_TransparencyFirst">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, transparent pixels in the image will be rendered using the first color in tileset palette 0. This is the default behavior of the GBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，图像中的透明像素将使用图块集调色板0中的第一种颜色渲染。这是GBA的默认行为。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>First palette color</string>
+                <string>调色板首色</string>
                </property>
               </widget>
              </item>
@@ -288,7 +288,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_Misc">
             <property name="title">
-             <string>Miscellaneous</string>
+             <string>其他</string>
             </property>
             <layout class="QFormLayout" name="formLayout">
              <property name="topMargin">
@@ -300,38 +300,38 @@
              <item row="0" column="0" colspan="2">
               <widget class="QCheckBox" name="checkBox_Placeholders">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, display the placeholder tiles that are rendered for the unused layer in-game. For a given metatile only 2 of the 3 tile layers are used, and the 3rd layer is filled with these placeholder tiles. The unused layer and placeholder tile change depending on the metatile's layer type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，将显示游戏中未使用图层的填充图块。每个地图块实际只会使用3个图层中的2个，剩余1个图层由系统自动填充。填充的图块类型会根据地图块的种类自动选择。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>Render placeholder metatiles</string>
+                <string>显示空白填充块</string>
                </property>
               </widget>
              </item>
              <item row="1" column="0">
               <widget class="QLabel" name="label_WidthMetatiles">
                <property name="text">
-                <string>Width (metatiles)</string>
+                <string>宽度 (地图块)</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
               <widget class="UIntSpinBox" name="spinBox_WidthMetatiles">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Width of the output image in metatiles.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输出图像的宽度，以地图块为单位。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item row="2" column="0">
               <widget class="QLabel" name="label_WidthPixels">
                <property name="text">
-                <string>Width (pixels)</string>
+                <string>宽度 (像素)</string>
                </property>
               </widget>
              </item>
              <item row="2" column="1">
               <widget class="UIntSpinBox" name="spinBox_WidthPixels">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Width of the output image in pixels. Automatically rounded up to a multiple of a metatile's pixel width.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输出图像的宽度，以像素为单位。此值会自动向上取整为地图块像素宽度的整数倍。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="minimum" stdset="0">
                 <number>16</number>
@@ -372,7 +372,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_Reset">
           <property name="text">
-           <string>Reset</string>
+           <string>重置</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -395,7 +395,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_Close">
           <property name="text">
-           <string>Close</string>
+           <string>取消</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -405,7 +405,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_Save">
           <property name="text">
-           <string>Save</string>
+           <string>保存</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -420,7 +420,7 @@
    <item row="0" column="0">
     <widget class="QGroupBox" name="groupBox_Preview">
      <property name="title">
-      <string>Preview</string>
+      <string>预览</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
       <property name="leftMargin">

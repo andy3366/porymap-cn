@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Export Map Image</string>
+   <string>导出地图图像</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -34,7 +34,7 @@
         <item row="0" column="0">
          <widget class="QLabel" name="label_MapSelection">
           <property name="text">
-           <string>Map</string>
+           <string>地图</string>
           </property>
          </widget>
         </item>
@@ -53,7 +53,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_Events">
         <property name="title">
-         <string>Events</string>
+         <string>事件</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0">
@@ -61,42 +61,42 @@
            <item row="1" column="1">
             <widget class="QCheckBox" name="checkBox_Triggers">
              <property name="text">
-              <string>Triggers</string>
+              <string>陷阱脚本</string>
              </property>
             </widget>
            </item>
            <item row="0" column="1">
             <widget class="QCheckBox" name="checkBox_Objects">
              <property name="text">
-              <string>Objects</string>
+              <string>人物事件</string>
              </property>
             </widget>
            </item>
            <item row="1" column="2">
             <widget class="QCheckBox" name="checkBox_HealLocations">
              <property name="text">
-              <string>Heal Locations</string>
+              <string>飞行点</string>
              </property>
             </widget>
            </item>
            <item row="0" column="2">
             <widget class="QCheckBox" name="checkBox_Warps">
              <property name="text">
-              <string>Warps</string>
+              <string>出入口</string>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
             <widget class="QCheckBox" name="checkBox_AllEvents">
              <property name="text">
-              <string>All</string>
+              <string>全选</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
             <widget class="QCheckBox" name="checkBox_BGs">
              <property name="text">
-              <string>BGs</string>
+              <string>标志</string>
              </property>
             </widget>
            </item>
@@ -108,7 +108,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_Connections">
         <property name="title">
-         <string>Connections</string>
+         <string>连接</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
@@ -116,35 +116,35 @@
            <item row="1" column="2">
             <widget class="QCheckBox" name="checkBox_ConnectionLeft">
              <property name="text">
-              <string>Left</string>
+              <string>左</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
             <widget class="QCheckBox" name="checkBox_ConnectionUp">
              <property name="text">
-              <string>Up</string>
+              <string>上</string>
              </property>
             </widget>
            </item>
            <item row="1" column="3">
             <widget class="QCheckBox" name="checkBox_ConnectionRight">
              <property name="text">
-              <string>Right</string>
+              <string>右</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
             <widget class="QCheckBox" name="checkBox_ConnectionDown">
              <property name="text">
-              <string>Down</string>
+              <string>下</string>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
             <widget class="QCheckBox" name="checkBox_AllConnections">
              <property name="text">
-              <string>All</string>
+              <string>全选</string>
              </property>
             </widget>
            </item>
@@ -156,7 +156,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_Misc">
         <property name="title">
-         <string>Miscellaneous</string>
+         <string>其他</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_5">
          <item row="0" column="0">
@@ -164,21 +164,21 @@
            <item row="0" column="0">
             <widget class="QCheckBox" name="checkBox_Grid">
              <property name="text">
-              <string>Grid</string>
+              <string>网格</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
             <widget class="QCheckBox" name="checkBox_Collision">
              <property name="text">
-              <string>Collision</string>
+              <string>运动许可</string>
              </property>
             </widget>
            </item>
            <item row="0" column="1">
             <widget class="QCheckBox" name="checkBox_Border">
              <property name="text">
-              <string>Border</string>
+              <string>边缘地图块</string>
              </property>
             </widget>
            </item>
@@ -190,7 +190,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_Timelapse">
         <property name="title">
-         <string>Timelapse</string>
+         <string>延时摄影</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_7">
          <item row="2" column="1">
@@ -218,7 +218,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Frame Delay</string>
+            <string>帧延迟</string>
            </property>
           </widget>
          </item>
@@ -241,7 +241,7 @@
          <item row="3" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>Edit Frame Skip</string>
+            <string>编辑跳帧设置</string>
            </property>
           </widget>
          </item>
@@ -264,20 +264,20 @@
       <item>
        <widget class="QCheckBox" name="checkBox_DisablePreviewUpdates">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, the image in the preview window will not be recreated when the settings are changed. This has no effect on the exported file.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，更改设置时预览窗口中的图像将不会实时更新。此设置不会影响最终导出的文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="text">
-         <string>Disable preview updates</string>
+         <string>禁用预览更新</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QCheckBox" name="checkBox_DisablePreviewScaling">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, the image shown in the preview window will not scale to fit into the available space. The aspect ratio of the image will never change. This has no effect on the exported file.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，预览窗口中显示的图像将不会自动缩放以适应可用空间。图像的宽高比永远不会改变。此设置不会影响最终导出的文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="text">
-         <string>Disable preview scaling</string>
+         <string>禁用预览缩放</string>
         </property>
        </widget>
       </item>
@@ -286,7 +286,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_Reset">
           <property name="text">
-           <string>Reset</string>
+           <string>重置</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -309,7 +309,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_Cancel">
           <property name="text">
-           <string>Cancel</string>
+           <string>取消</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -319,7 +319,7 @@
         <item>
          <widget class="QPushButton" name="pushButton_Save">
           <property name="text">
-           <string>Save</string>
+           <string>保存</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -340,7 +340,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Preview</string>
+      <string>预览</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
       <property name="leftMargin">

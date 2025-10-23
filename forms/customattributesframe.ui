@@ -14,7 +14,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Custom Attributes</string>
+      <string>自定义属性</string>
      </property>
     </widget>
    </item>
@@ -42,7 +42,7 @@
       <item>
        <widget class="QPushButton" name="button_Add">
         <property name="text">
-         <string>Add</string>
+         <string>添加</string>
         </property>
        </widget>
       </item>
@@ -52,7 +52,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Delete</string>
+         <string>删除</string>
         </property>
        </widget>
       </item>

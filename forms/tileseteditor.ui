@@ -14,7 +14,7 @@
    <enum>Qt::FocusPolicy::ClickFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Tileset Editor</string>
+   <string>Tileset 编辑器</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -186,7 +186,7 @@
            <item>
             <widget class="QGroupBox" name="groupBox_MetatileProperties">
              <property name="title">
-              <string>Metatile Properties</string>
+              <string>地图块属性</string>
              </property>
              <property name="flat">
               <bool>false</bool>
@@ -219,7 +219,7 @@
                  <item>
                   <widget class="QLabel" name="label_RawAttributesValue">
                    <property name="text">
-                    <string>Raw Attributes Value</string>
+                    <string>原始属性值</string>
                    </property>
                   </widget>
                  </item>
@@ -263,7 +263,7 @@
                  <item>
                   <widget class="QLabel" name="label_LayerType">
                    <property name="text">
-                    <string>Layer Type</string>
+                    <string>图层类型</string>
                    </property>
                   </widget>
                  </item>
@@ -323,7 +323,7 @@
                  <item row="1" column="1">
                   <widget class="QToolButton" name="copyButton_MetatileLabel">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the full metatile label to the clipboard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将完整的地图块标签复制到剪贴板。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
                     <string>...</string>
@@ -344,7 +344,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_MetatileLabel">
                    <property name="text">
-                    <string>Metatile Label (Optional)</string>
+                    <string>地图块标签（可选）</string>
                    </property>
                   </widget>
                  </item>
@@ -388,7 +388,7 @@
                  <item>
                   <widget class="QLabel" name="label_TerrainType">
                    <property name="text">
-                    <string>Terrain Type</string>
+                    <string>地形类型</string>
                    </property>
                   </widget>
                  </item>
@@ -445,7 +445,7 @@
                  <item>
                   <widget class="QLabel" name="label_EncounterType">
                    <property name="text">
-                    <string>Encounter Type</string>
+                    <string>遭遇类型</string>
                    </property>
                   </widget>
                  </item>
@@ -515,7 +515,7 @@
                  <item>
                   <widget class="QLabel" name="label_MetatileBehavior">
                    <property name="text">
-                    <string>Metatile Behavior</string>
+                    <string>地图块行为</string>
                    </property>
                   </widget>
                  </item>
@@ -617,7 +617,7 @@
               </sizepolicy>
              </property>
              <property name="title">
-              <string>Tile Properties</string>
+              <string>图块属性</string>
              </property>
              <property name="flat">
               <bool>false</bool>
@@ -626,7 +626,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label">
                 <property name="text">
-                 <string>Palette</string>
+                 <string>调色板</string>
                 </property>
                </widget>
               </item>
@@ -636,7 +636,7 @@
               <item row="1" column="0">
                <widget class="QLabel" name="label_2">
                 <property name="text">
-                 <string>X Flip</string>
+                 <string>水平翻转</string>
                 </property>
                </widget>
               </item>
@@ -653,7 +653,7 @@
               <item row="2" column="0">
                <widget class="QLabel" name="label_3">
                 <property name="text">
-                 <string>Y Flip</string>
+                 <string>垂直翻转</string>
                 </property>
                </widget>
               </item>
@@ -716,7 +716,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>Selection</string>
+                    <string>预览选区</string>
                    </property>
                   </widget>
                  </item>
@@ -854,32 +854,32 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>文件</string>
     </property>
     <widget class="QMenu" name="menuExport_Tiles_Image">
      <property name="title">
-      <string>Export Tiles Image</string>
+      <string>导出 Tiles 图像</string>
      </property>
      <addaction name="actionExport_Primary_Tiles_Image"/>
      <addaction name="actionExport_Secondary_Tiles_Image"/>
     </widget>
     <widget class="QMenu" name="menuImport_AdvanceMap_Metatiles">
      <property name="title">
-      <string>Import Metatiles from Advance Map 1.92</string>
+      <string>从 Advance Map 1.92 导入地图块</string>
      </property>
      <addaction name="actionImport_Primary_AdvanceMap_Metatiles"/>
      <addaction name="actionImport_Secondary_AdvanceMap_Metatiles"/>
     </widget>
     <widget class="QMenu" name="menuImport_Tiles_Image">
      <property name="title">
-      <string>Import Tiles Image</string>
+      <string>导出 Tiles 图像</string>
      </property>
      <addaction name="actionImport_Primary_Tiles_Image"/>
      <addaction name="actionImport_Secondary_Tiles_Image"/>
     </widget>
     <widget class="QMenu" name="menuExport_porytiles_Layer_Images">
      <property name="title">
-      <string>Export Porytiles Layer Images</string>
+      <string>导出 Porytiles 图层图像</string>
      </property>
      <addaction name="actionExport_Primary_Porytiles_Layer_Images"/>
      <addaction name="actionExport_Secondary_Porytiles_Layer_Images"/>
@@ -895,14 +895,14 @@
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Tools</string>
+     <string>工具</string>
     </property>
     <addaction name="actionChange_Palettes"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>编辑</string>
     </property>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
@@ -916,11 +916,11 @@
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
-     <string>View</string>
+     <string>视图</string>
     </property>
     <widget class="QMenu" name="menuLayer_Arrangement">
      <property name="title">
-      <string>Layer Arrangement</string>
+      <string>图层排列</string>
      </property>
      <addaction name="actionLayer_Arrangement_Horizontal"/>
      <addaction name="actionLayer_Arrangement_Vertical"/>
@@ -943,7 +943,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSave_Tileset">
    <property name="text">
-    <string>Save Tileset</string>
+    <string>保存 Tileset</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -951,12 +951,12 @@
   </action>
   <action name="actionChange_Metatiles_Count">
    <property name="text">
-    <string>Change Number of Metatiles...</string>
+    <string>更改地图块数量...</string>
    </property>
   </action>
   <action name="actionChange_Palettes">
    <property name="text">
-    <string>Palette Editor</string>
+    <string>调色板编辑器</string>
    </property>
   </action>
   <action name="actionShow_Unused">
@@ -972,7 +972,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Display Unused Tiles</string>
+    <string>显示未使用的 Tiles</string>
    </property>
   </action>
   <action name="actionShow_Counts">
@@ -980,7 +980,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Display Metatile Usage Counts</string>
+    <string>显示未使用的地图块</string>
    </property>
   </action>
   <action name="actionUndo">
@@ -988,7 +988,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Undo</string>
+    <string>撤销</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -999,7 +999,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Redo</string>
+    <string>恢复</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Y</string>
@@ -1007,7 +1007,7 @@
   </action>
   <action name="actionCut">
    <property name="text">
-    <string>Cut</string>
+    <string>剪切</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
@@ -1015,7 +1015,7 @@
   </action>
   <action name="actionCopy">
    <property name="text">
-    <string>Copy</string>
+    <string>复制</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -1026,7 +1026,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Paste</string>
+    <string>粘贴</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
@@ -1037,7 +1037,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Layer Grid</string>
+    <string>图层网格</string>
    </property>
   </action>
   <action name="actionMetatile_Grid">
@@ -1045,7 +1045,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Metatile Grid</string>
+    <string>地图块网格</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
@@ -1056,7 +1056,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Show Tileset Divider</string>
+    <string>显示 Tileset 分隔线</string>
    </property>
   </action>
   <action name="actionShow_Raw_Metatile_Attributes">
@@ -1064,7 +1064,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Show Raw Metatile Attributes</string>
+    <string>显示原始地图块属性</string>
    </property>
   </action>
   <action name="actionExport_Primary_Tiles_Image">
@@ -1099,7 +1099,7 @@
   </action>
   <action name="actionExport_Metatiles_Image">
    <property name="text">
-    <string>Export Metatiles Image...</string>
+    <string>导出地图块图像...</string>
    </property>
   </action>
   <action name="actionExport_Primary_Porytiles_Layer_Images">
@@ -1117,7 +1117,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Horizontal</string>
+    <string>水平</string>
    </property>
   </action>
   <action name="actionLayer_Arrangement_Vertical">
@@ -1125,7 +1125,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Vertical</string>
+    <string>垂直</string>
    </property>
   </action>
   <action name="actionSwap_Metatiles">
@@ -1133,7 +1133,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Swap Metatiles</string>
+    <string>交换地图块</string>
    </property>
    <property name="shortcut">
     <string>X</string>

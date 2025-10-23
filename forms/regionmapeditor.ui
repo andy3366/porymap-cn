@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Region Map Editor</string>
+   <string>地区地图编辑器</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -39,7 +39,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Region</string>
+          <string>区域</string>
          </property>
         </widget>
        </item>
@@ -140,7 +140,7 @@
        </property>
        <widget class="QWidget" name="tab_RM_BkgImg">
         <attribute name="title">
-         <string>Background Image</string>
+         <string>地区地图</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0">
@@ -261,7 +261,7 @@
        </widget>
        <widget class="QWidget" name="tab_RM_Layout">
         <attribute name="title">
-         <string>Map Layout</string>
+         <string>地图布局</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
@@ -382,7 +382,7 @@
        </widget>
        <widget class="QWidget" name="tab_RM_Entries">
         <attribute name="title">
-         <string>Map Entries</string>
+         <string>地图条目</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_6">
          <item row="0" column="0">
@@ -669,14 +669,14 @@
             <item>
              <widget class="QCheckBox" name="checkBox_tileHFlip">
               <property name="text">
-               <string>h-flip</string>
+               <string>水平翻转</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QCheckBox" name="checkBox_tileVFlip">
               <property name="text">
-               <string>v-flip</string>
+               <string>垂直翻转</string>
               </property>
              </widget>
             </item>
@@ -690,7 +690,7 @@
             <item>
              <widget class="QLabel" name="label_10">
               <property name="text">
-               <string>palette</string>
+               <string>调色板</string>
               </property>
              </widget>
             </item>
@@ -734,7 +734,7 @@
                <item row="0" column="0">
                 <widget class="QLabel" name="label_8">
                  <property name="text">
-                  <string>Layer</string>
+                  <string>图层</string>
                  </property>
                 </widget>
                </item>
@@ -771,7 +771,7 @@
                  </sizepolicy>
                 </property>
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The section of the region map which the map is grouped under. This also determines the name of the map that is displayed when the player enters it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;地图在地区地图上的所属区域。此设置也决定了玩家查看地区地图时显示的名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="editable">
                  <bool>false</bool>
@@ -781,7 +781,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label_RM_MapSection">
                 <property name="text">
-                 <string>Map Section</string>
+                 <string>地图区域</string>
                 </property>
                </widget>
               </item>
@@ -796,7 +796,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>Delete Square</string>
+               <string>删除区域</string>
               </property>
              </widget>
             </item>
@@ -824,14 +824,14 @@
               <item row="1" column="0">
                <widget class="QLabel" name="label_7">
                 <property name="text">
-                 <string>Layout Height</string>
+                 <string>布局高度</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="0">
                <widget class="QLabel" name="label_6">
                 <property name="text">
-                 <string>Layout Width</string>
+                 <string>布局宽度</string>
                 </property>
                </widget>
               </item>
@@ -888,7 +888,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_4">
                    <property name="text">
-                    <string>width</string>
+                    <string>宽度</string>
                    </property>
                   </widget>
                  </item>
@@ -901,7 +901,7 @@
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_5">
                    <property name="text">
-                    <string>height</string>
+                    <string>高度</string>
                    </property>
                   </widget>
                  </item>
@@ -920,7 +920,7 @@
                  </sizepolicy>
                 </property>
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The section of the region map which the map is grouped under. This also determines the name of the map that is display when the player enters it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;地图在地区地图上的所属区域。此设置也决定了玩家查看地区地图时显示的名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="editable">
                  <bool>false</bool>
@@ -930,7 +930,7 @@
               <item row="2" column="0">
                <widget class="QLabel" name="label_Dimensions">
                 <property name="text">
-                 <string>Dimensions</string>
+                 <string>尺寸</string>
                 </property>
                </widget>
               </item>
@@ -969,14 +969,14 @@
               <item row="1" column="0">
                <widget class="QLabel" name="label_RM_Location">
                 <property name="text">
-                 <string>Location</string>
+                 <string>位置</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="0">
                <widget class="QLabel" name="label_RM_Entry_MapSection">
                 <property name="text">
-                 <string>Map Section</string>
+                 <string>地图区域</string>
                 </property>
                </widget>
               </item>
@@ -985,7 +985,7 @@
             <item>
              <widget class="QPushButton" name="pushButton_entryActivate">
               <property name="text">
-               <string>Add</string>
+               <string>添加</string>
               </property>
              </widget>
             </item>
@@ -1077,7 +1077,7 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>文件</string>
     </property>
     <addaction name="action_RegionMap_Save"/>
     <addaction name="actionSave_All"/>
@@ -1086,7 +1086,7 @@
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>编辑</string>
     </property>
     <addaction name="action_RegionMap_Resize"/>
     <addaction name="action_Swap"/>
@@ -1102,7 +1102,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_RegionMap_Save">
    <property name="text">
-    <string>Save</string>
+    <string>保存</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -1110,7 +1110,7 @@
   </action>
   <action name="action_RegionMap_Resize">
    <property name="text">
-    <string>Resize Tilemap</string>
+    <string>调整 Tilemap 尺寸</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+R</string>
@@ -1118,52 +1118,52 @@
   </action>
   <action name="action_RegionMap_Generate">
    <property name="text">
-    <string>Generate...</string>
+    <string>生成...</string>
    </property>
   </action>
   <action name="action_Swap">
    <property name="text">
-    <string>Swap Layout Sections...</string>
+    <string>交换布局区域...</string>
    </property>
   </action>
   <action name="action_RegionMap_ClearImage">
    <property name="text">
-    <string>Clear Background Image</string>
+    <string>清除背景图像</string>
    </property>
   </action>
   <action name="action_RegionMap_ClearLayout">
    <property name="text">
-    <string>Clear Map Layout</string>
+    <string>清除地图布局</string>
    </property>
   </action>
   <action name="action_Import_RegionMap_ImageTiles">
    <property name="text">
-    <string>Import Region Map Image Tiles...</string>
+    <string>导入地区地图图像图块...</string>
    </property>
   </action>
   <action name="action_Import_CityMap_ImageTiles">
    <property name="text">
-    <string>Import City Map Image Tiles...</string>
+    <string>导入城市地图图像图块...</string>
    </property>
   </action>
   <action name="actionSave_All">
    <property name="text">
-    <string>Save All</string>
+    <string>保存全部</string>
    </property>
   </action>
   <action name="action_RegionMap_ClearEntries">
    <property name="text">
-    <string>Clear Map Entries</string>
+    <string>清除地图条目</string>
    </property>
   </action>
   <action name="action_Configure">
    <property name="text">
-    <string>Update Config...</string>
+    <string>更新配置...</string>
    </property>
   </action>
   <action name="action_Replace">
    <property name="text">
-    <string>Replace Layout Section...</string>
+    <string>替换布局区域...</string>
    </property>
   </action>
  </widget>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add New Map Connection</string>
+   <string>添加新的地图连接</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -38,28 +38,28 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_Map">
         <property name="text">
-         <string>Map</string>
+         <string>地图</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="NoScrollComboBox" name="comboBox_Map">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The name of the map to connect to the current map.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要连接到当前地图的地图名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_Direction">
         <property name="text">
-         <string>Direction</string>
+         <string>方向</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="NoScrollComboBox" name="comboBox_Direction">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Where the connected map should be positioned relative to the current map.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;连接地图相对于当前地图应被放置的位置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -69,7 +69,7 @@
          <string notr="true">color: rgb(255, 0, 0)</string>
         </property>
         <property name="text">
-         <string>'Map' must be the name of an existing map.</string>
+         <string>“地图” 必须是一个现有的地图名称。</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>

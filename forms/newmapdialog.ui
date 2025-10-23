@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>New Map Options</string>
+   <string>新地图设置</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -50,7 +50,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_Name">
          <property name="text">
-          <string>Map Name</string>
+          <string>地图名称</string>
          </property>
         </widget>
        </item>
@@ -110,14 +110,14 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_LayoutID">
          <property name="text">
-          <string>Layout ID</string>
+          <string>布局 ID</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_Group">
          <property name="text">
-          <string>Map Group</string>
+          <string>地图组</string>
          </property>
         </widget>
        </item>
@@ -134,7 +134,7 @@
        <item row="8" column="1">
         <widget class="QCheckBox" name="checkBox_CanFlyTo">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, a Heal Location will be added to this map automatically.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，将自动在此地图添加一个飞行点。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string/>
@@ -163,7 +163,7 @@
        <item row="2" column="1">
         <widget class="NoScrollComboBox" name="comboBox_Group">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The name of the group this map will be added to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此地图将要加入的地图组名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="editable">
           <bool>true</bool>
@@ -176,14 +176,14 @@
        <item row="8" column="0">
         <widget class="QLabel" name="label_CanFlyTo">
          <property name="text">
-          <string>Can Fly To</string>
+          <string>飞行点</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="lineEdit_Name">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The name of the new map. The name cannot be the same as any other existing map.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新地图的名称。该名称不能与任何其他现有地图相同。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="placeholderText">
           <string>MyNewMap</string>

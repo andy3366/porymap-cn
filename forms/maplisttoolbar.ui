@@ -32,7 +32,7 @@
    <item>
     <widget class="QToolButton" name="button_AddFolder">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add a new folder to the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在列表中添加一个新文件夹。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string/>
@@ -52,7 +52,7 @@
    <item>
     <widget class="QToolButton" name="button_ToggleEmptyFolders">
      <property name="text">
-      <string>Hide empty folders in the list.</string>
+      <string>隐藏列表中的空文件夹。</string>
      </property>
      <property name="icon">
       <iconset resource="../resources/images.qrc">
@@ -73,7 +73,7 @@
    <item>
     <widget class="QToolButton" name="button_ExpandAll">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Expand all folders in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;展开列表中所有文件夹。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string/>
@@ -93,7 +93,7 @@
    <item>
     <widget class="QToolButton" name="button_CollapseAll">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Collapse all folders in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;折叠列表中所有文件夹。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string/>
@@ -113,7 +113,7 @@
    <item>
     <widget class="QToolButton" name="button_ToggleEdit">
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If enabled, folders may be renamed and items in the list may be rearranged.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用后，可以重命名文件夹并重新排列列表中的项目。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string/>

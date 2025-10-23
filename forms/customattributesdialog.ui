@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add New Custom Attribute</string>
+   <string>添加新的自定义属性</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -26,14 +26,14 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_Name">
         <property name="text">
-         <string>Name</string>
+         <string>名称</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QLineEdit" name="lineEdit_Name">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The key name for the new JSON field&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置新JSON字段的名称&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="clearButtonEnabled">
          <bool>true</bool>
@@ -43,21 +43,21 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_Type">
         <property name="text">
-         <string>Type</string>
+         <string>类型</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
        <widget class="NoScrollComboBox" name="comboBox_Type">
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The data type for the new JSON field&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择新JSON字段的数据类型&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_Value">
         <property name="text">
-         <string>Value</string>
+         <string>值</string>
         </property>
        </widget>
       </item>
@@ -70,7 +70,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The value for the new JSON field&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置新JSON字段的值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <widget class="QWidget" name="page_String">
          <layout class="QHBoxLayout" name="horizontalLayout">

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>对话框</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
@@ -20,7 +20,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Tip&lt;/span&gt;: Click on individual metatiles to remove them from the Prefab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;提示&lt;/span&gt;：点击单个地图块可将其从预制件中移除&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>
@@ -127,7 +127,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Prefab Name</string>
+         <string>预制件名称</string>
         </property>
        </widget>
       </item>

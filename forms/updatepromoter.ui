@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Porymap Version Update</string>
+   <string>Porymap 版本更新</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -36,7 +36,7 @@
       <item>
        <widget class="QLabel" name="label_Warning">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;WARNING:  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Updating Porymap may require you to update your projects. See &quot;Breaking Changes&quot; in the Changelog for details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13pt; color:#d7000c;&quot;&gt;警告：  &lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;更新 Porymap 可能需要您同时更新您的项目。详情请查看更新日志中的“重大变更”部分。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -83,7 +83,7 @@
       <item>
        <widget class="QCheckBox" name="checkBox_StopAlerts">
         <property name="text">
-         <string>Do not alert me about new updates</string>
+         <string>不再提醒新版本更新</string>
         </property>
        </widget>
       </item>

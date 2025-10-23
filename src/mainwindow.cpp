@@ -232,13 +232,13 @@ void MainWindow::initExtraShortcuts() {
     shortcut_Open_Scripts->setObjectName("shortcut_Open_Scripts");
     shortcut_Open_Scripts->setWhatsThis("Open Map Scripts");
 
-    copyAction = new QAction("Copy", this);
+    copyAction = new QAction("复制", this);
     copyAction->setShortcut(QKeySequence("Ctrl+C"));
     connect(copyAction, &QAction::triggered, this, &MainWindow::copy);
     ui->menuEdit->addSeparator();
     ui->menuEdit->addAction(copyAction);
 
-    pasteAction = new QAction("Paste", this);
+    pasteAction = new QAction("粘贴", this);
     pasteAction->setShortcut(QKeySequence("Ctrl+V"));
     connect(pasteAction, &QAction::triggered, this, &MainWindow::paste);
     ui->menuEdit->addAction(pasteAction);
@@ -399,11 +399,11 @@ void MainWindow::initEditor() {
 
     this->loadUserSettings();
 
-    undoAction = editor->editGroup.createUndoAction(this, tr("&Undo"));
+    undoAction = editor->editGroup.createUndoAction(this, tr("撤销(&U)"));
     undoAction->setObjectName("action_Undo");
     undoAction->setShortcut(QKeySequence("Ctrl+Z"));
 
-    redoAction = editor->editGroup.createRedoAction(this, tr("&Redo"));
+    redoAction = editor->editGroup.createRedoAction(this, tr("恢复(&R)"));
     redoAction->setObjectName("action_Redo");
     redoAction->setShortcuts({QKeySequence("Ctrl+Y"), QKeySequence("Ctrl+Shift+Z")});
 
@@ -415,7 +415,7 @@ void MainWindow::initEditor() {
     this->undoView->setAttribute(Qt::WA_QuitOnClose, false);
 
     // Show the EditHistory dialog with Ctrl+E
-    QAction *showHistory = new QAction("Show Edit History...", this);
+    QAction *showHistory = new QAction("显示编辑历史...", this);
     showHistory->setObjectName("action_ShowEditHistory");
     showHistory->setShortcut(QKeySequence("Ctrl+E"));
     connect(showHistory, &QAction::triggered, this, &MainWindow::openEditHistory);
