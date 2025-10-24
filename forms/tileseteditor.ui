@@ -964,7 +964,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Display Unused Metatiles</string>
+    <string>显示未使用的地图块</string>
    </property>
   </action>
   <action name="actionShow_UnusedTiles">
@@ -980,7 +980,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>显示未使用的地图块</string>
+    <string>显示地图块使用次数</string>
    </property>
   </action>
   <action name="actionUndo">
