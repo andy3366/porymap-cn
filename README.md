@@ -1,3 +1,17 @@
+# Porymap 中文汉化版
+
+基于 Porymap 的中文界面汉化。
+
+## 下载
+
+Windows 用户可以从 [Releases][releases-cn] 页面下载。
+
+macOS 和 Linux 不提供预编译版本
+
+## 说明
+
+此项目主要是为了满足个人需求，**可能无法保证持续和及时的更新与维护**。
+
 # Porymap
 
 [![Actions Status](https://github.com/huderlem/porymap/workflows/Build%20Porymap/badge.svg)](https://github.com/huderlem/porymap/actions)
@@ -34,3 +48,4 @@ Read [INSTALL.md](INSTALL.md) for instructions on how to compile Porymap from so
 [pokefirered]: https://github.com/pret/pokefirered
 [changelog]: https://github.com/huderlem/porymap/blob/master/CHANGELOG.md
 [releases]: https://github.com/huderlem/porymap/releases
+[releases-cn]: https://github.com/andy3366/porymap-cn/releases
