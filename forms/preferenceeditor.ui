@@ -101,14 +101,14 @@
               <item row="5" column="0">
                <widget class="QLabel" name="label_ColorSpace">
                 <property name="text">
-                 <string>Image Export Color Space</string>
+                 <string>图像导出色彩空间</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="1">
                <widget class="NoScrollComboBox" name="comboBox_ColorSpace">
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The color space to use for exported images. If &amp;quot;---&amp;quot; is set, no color space will be used for the exported image. For details on each color space, see Qt's manual page for QColorSpace.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;导出图像时使用的色彩空间。如果设置为 &amp;quot;---&amp;quot; ，则导出的图像将不使用任何色彩空间。有关各个色彩空间的详细信息，请参阅Qt的QColorSpace手册页面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="editable">
                  <bool>false</bool>
@@ -118,10 +118,10 @@
               <item row="2" column="0" colspan="2">
                <widget class="QCheckBox" name="checkBox_ShowProjectLoadingScreen">
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, a loading screen with progress information will appear when a project is opened.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，打开项目时将显示带有载入进度的加载框。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>Show project loading screen</string>
+                 <string>显示项目加载框</string>
                 </property>
                </widget>
               </item>
