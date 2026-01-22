@@ -121,25 +121,60 @@ void MainWindow::saveGlobalConfigs() {
 }
 
 void MainWindow::setWindowDisabled(bool disabled) {
-    for (auto action : findChildren<QAction *>())
-        action->setDisabled(disabled);
-    for (auto child : findChildren<QWidget *>(QString(), Qt::FindDirectChildrenOnly))
-        child->setDisabled(disabled);
-    for (auto menu : ui->menuBar->findChildren<QMenu *>(QString(), Qt::FindDirectChildrenOnly))
-        menu->setDisabled(disabled);
-    ui->menuBar->setDisabled(false);
-    ui->menuFile->setDisabled(false);
-    ui->action_Open_Project->setDisabled(false);
-    ui->menuOpen_Recent_Project->setDisabled(false);
-    refreshRecentProjectsMenu();
-    ui->action_Exit->setDisabled(false);
-    ui->menuHelp->setDisabled(false);
-    ui->actionAbout_Porymap->setDisabled(false);
-    ui->actionOpen_Log_File->setDisabled(false);
-    ui->actionOpen_Config_Folder->setDisabled(false);
-    ui->actionCheck_for_Updates->setDisabled(false);
-    if (!disabled)
-        togglePreferenceSpecificUi();
+    // When we disable the window's widgets/actions, record them so we know what to re-enable later.
+    // Blindly re-enabling widgets/actions could otherwise enable something that should initially be disabled.
+    if (disabled) {
+        // Some objects should be available even if no project is open.
+        const QSet<QObject*> objectsAlwaysEnabled = {
+            ui->menuBar,
+            ui->menuFile,
+            ui->menuOpen_Recent_Project,
+            ui->menuHelp,
+            ui->action_Open_Project,
+            ui->action_Exit,
+            ui->actionAbout_Porymap,
+            ui->actionOpen_Manual,
+            ui->actionOpen_Log_File,
+            ui->actionOpen_Config_Folder,
+            ui->actionCheck_for_Updates,
+        };
+        auto allowedToDisable = [objectsAlwaysEnabled](QObject *object) {
+            return !(object->objectName().isEmpty() || object->objectName().startsWith(QStringLiteral("_q_")) || objectsAlwaysEnabled.contains(object));
+        };
+
+        for (auto action : findChildren<QAction *>()) {
+            if (action->isEnabled() && allowedToDisable(action)) {
+                action->setEnabled(false);
+                this->objectsDisabled.insert(action);
+            }
+        }
+        for (auto child : findChildren<QWidget *>(QString(), Qt::FindDirectChildrenOnly)) {
+            if (child->isEnabled() && allowedToDisable(child)) {
+                child->setEnabled(false);
+                this->objectsDisabled.insert(child);
+            }
+        }
+        for (auto menu : ui->menuBar->findChildren<QMenu *>(QString(), Qt::FindDirectChildrenOnly)) {
+            if (menu->isEnabled() && allowedToDisable(menu)) {
+                menu->setEnabled(false);
+                this->objectsDisabled.insert(menu);
+            }
+        }
+    } else {
+        for (auto object : this->objectsDisabled) {
+            auto action = dynamic_cast<QAction*>(object);
+            if (action) {
+                action->setEnabled(true);
+                continue;
+            }
+            auto widget = dynamic_cast<QWidget*>(object);
+            if (widget) {
+                widget->setEnabled(true);
+                continue;
+            }
+        }
+        this->objectsDisabled.clear();
+    }
 
     // Disabling the central widget above sets focus to the map list's search bar,
     // which prevents users from using keyboard shortcuts for menu actions.
@@ -299,6 +334,8 @@ void MainWindow::initCustomUI() {
         ui->mainTabBar->setTabIcon(i, mainTabIcons.value(i));
     }
 
+    this->unlockableMainTabIcon.load(":/images/unlockable_tab_icon.dat");
+
     // Create map header data widget
     this->mapHeaderForm = new MapHeaderForm();
     ui->layout_HeaderData->addWidget(this->mapHeaderForm);
@@ -306,6 +343,12 @@ void MainWindow::initCustomUI() {
     // Center zooming on the mouse
     ui->graphicsView_Map->setTransformationAnchor(QGraphicsView::ViewportAnchor::AnchorUnderMouse);
     ui->graphicsView_Map->setResizeAnchor(QGraphicsView::ViewportAnchor::AnchorUnderMouse);
+}
+
+void MainWindow::overrideMainTabIcons(const QIcon& icon) {
+    for (int i = 1; i < ui->mainTabBar->count(); i++) {
+        ui->mainTabBar->setTabIcon(i, icon);
+    }
 }
 
 void MainWindow::initExtraSignals() {
@@ -342,13 +385,18 @@ void MainWindow::initExtraSignals() {
 
     connect(ui->action_NewMap, &QAction::triggered, this, &MainWindow::openNewMapDialog);
     connect(ui->action_NewLayout, &QAction::triggered, this, &MainWindow::openNewLayoutDialog);
-    connect(ui->actionDuplicate_Current_Map_Layout, &QAction::triggered, this, &MainWindow::openDuplicateMapOrLayoutDialog);
     connect(ui->comboBox_LayoutSelector, &NoScrollComboBox::editingFinished, this, &MainWindow::onLayoutSelectorEditingFinished);
     connect(ui->checkBox_smartPaths, &QCheckBox::toggled, this, &MainWindow::setSmartPathsEnabled);
     connect(ui->checkBox_ToggleBorder, &QCheckBox::toggled, this, &MainWindow::setBorderVisibility);
     connect(ui->checkBox_MirrorConnections, &QCheckBox::toggled, this, &MainWindow::setMirrorConnectionsEnabled);
     connect(ui->comboBox_PrimaryTileset, &NoScrollComboBox::editingFinished, [this] { setPrimaryTileset(ui->comboBox_PrimaryTileset->currentText()); });
     connect(ui->comboBox_SecondaryTileset, &NoScrollComboBox::editingFinished, [this] { setSecondaryTileset(ui->comboBox_SecondaryTileset->currentText()); });
+    connect(ui->actionDuplicate_Current_Map, &QAction::triggered, [this] {
+        if (this->editor->map) openDuplicateMapDialog(this->editor->map->name());
+    });
+    connect(ui->actionDuplicate_Current_Layout, &QAction::triggered, [this] {
+        if (this->editor->layout) openDuplicateLayoutDialog(this->editor->layout->id);
+    });
 }
 
 void MainWindow::on_actionCheck_for_Updates_triggered() {
@@ -397,7 +445,7 @@ void MainWindow::initEditor() {
     connect(ui->toolButton_deleteEvent, &QAbstractButton::clicked, this->editor, &Editor::deleteSelectedEvents);
     connect(ui->graphicsView_Connections, &ConnectionsView::pressedDelete, this->editor, &Editor::removeSelectedConnection);
 
-    this->loadUserSettings();
+    loadUserSettings();
 
     undoAction = editor->editGroup.createUndoAction(this, tr("撤销(&U)"));
     undoAction->setObjectName("action_Undo");
@@ -676,6 +724,9 @@ void MainWindow::loadUserSettings() {
 
     setTheme(porymapConfig.theme);
     setDivingMapsVisible(porymapConfig.showDiveEmergeMaps);
+
+    togglePreferenceSpecificUi();
+    refreshRecentProjectsMenu();
 }
 
 void MainWindow::restoreWindowState() {
@@ -708,9 +759,9 @@ void MainWindow::restoreWindowState() {
 }
 
 void MainWindow::setTheme(QString theme) {
-    QFile File(QString(":/themes/%1.qss").arg(theme));
-    File.open(QFile::ReadOnly);
-    QString stylesheet = QLatin1String(File.readAll());
+    QFile file(QString(":/themes/%1.qss").arg(theme));
+    if (!file.open(QFile::ReadOnly)) return;
+    QString stylesheet = QLatin1String(file.readAll());
 
     stylesheet.append(QString("QWidget { %1 } ").arg(Util::toStylesheetString(porymapConfig.applicationFont)));
     stylesheet.append(QString("MapTree { %1 } ").arg(Util::toStylesheetString(porymapConfig.mapListFont)));
@@ -753,7 +804,7 @@ bool MainWindow::openProject(QString dir, bool initial) {
     const QString openMessage = QString("Opening %1").arg(projectString);
     logInfo(openMessage);
 
-    porysplash->start();
+    if (porymapConfig.showProjectLoadingScreen) porysplash->start();
 
     porysplash->showLoadingMessage("config");
     if (!projectConfig.load(dir) || !userConfig.load(dir)) {
@@ -1176,6 +1227,7 @@ void MainWindow::setLayoutOnlyMode(bool layoutOnly) {
     ui->mainTabBar->setTabToolTip(MainTab::WildPokemon, this->editor->project->wildEncountersLoaded ? toolTip : QString());
 
     ui->comboBox_LayoutSelector->setEnabled(mapEditingEnabled);
+    ui->actionDuplicate_Current_Map->setEnabled(mapEditingEnabled);
 }
 
 // setLayout, but with a visible error message in case of failure.
@@ -1258,9 +1310,9 @@ void MainWindow::refreshMapScene() {
     ui->graphicsView_currentMetatileSelection->setScene(editor->scene_current_metatile_selection);
     ui->graphicsView_currentMetatileSelection->setFixedSize(editor->current_metatile_selection_item->pixmap().width() + 2, editor->current_metatile_selection_item->pixmap().height() + 2);
 
-    ui->graphicsView_Collision->setScene(editor->scene_collision_metatiles);
-    //ui->graphicsView_Collision->setSceneRect(editor->scene_collision_metatiles->sceneRect());
-    ui->graphicsView_Collision->setFixedSize(editor->movement_permissions_selector_item->pixmap().width() + 2, editor->movement_permissions_selector_item->pixmap().height() + 2);
+    ui->graphicsView_CollisionSelector->setScene(editor->scene_collision_metatiles);
+    //ui->graphicsView_CollisionSelector->setSceneRect(editor->scene_collision_metatiles->sceneRect());
+    ui->graphicsView_CollisionSelector->setFixedSize(editor->movement_permissions_selector_item->pixmap().width() + 2, editor->movement_permissions_selector_item->pixmap().height() + 2);
 
     on_mainTabBar_tabBarClicked(ui->mainTabBar->currentIndex());
 }
@@ -1440,16 +1492,15 @@ bool MainWindow::setProjectUI() {
     this->locationListProxyModel = new FilterChildrenProxyModel();
     this->locationListProxyModel->setSourceModel(this->mapLocationModel);
     this->locationListProxyModel->setHideEmpty(porymapConfig.mapListHideEmptyEnabled[MapListTab::Locations]);
-
     ui->locationList->setModel(locationListProxyModel);
-    ui->locationList->sortByColumn(0, Qt::SortOrder::AscendingOrder);
+    setMapListSorted(ui->locationList, porymapConfig.mapListLocationsSorted);
 
     this->layoutTreeModel = new LayoutTreeModel(editor->project);
     this->layoutListProxyModel = new FilterChildrenProxyModel();
     this->layoutListProxyModel->setSourceModel(this->layoutTreeModel);
     this->layoutListProxyModel->setHideEmpty(porymapConfig.mapListHideEmptyEnabled[MapListTab::Layouts]);
     ui->layoutList->setModel(layoutListProxyModel);
-    ui->layoutList->sortByColumn(0, Qt::SortOrder::AscendingOrder);
+    setMapListSorted(ui->layoutList, porymapConfig.mapListLayoutsSorted);
 
     ui->mapCustomAttributesFrame->table()->setRestrictedKeys(project->getTopLevelMapFields());
 
@@ -1503,7 +1554,7 @@ void MainWindow::clearProjectUI() {
     resetMapNavigation();
 }
 
-void MainWindow::scrollMapList(MapTree *list, const QString &itemName) {
+void MainWindow::scrollMapList(MapTree *list, const QString &itemName, bool expandItem) {
     if (!list || itemName.isEmpty())
         return;
     auto model = static_cast<FilterChildrenProxyModel*>(list->model());
@@ -1516,7 +1567,7 @@ void MainWindow::scrollMapList(MapTree *list, const QString &itemName) {
         return;
 
     list->setCurrentIndex(index);
-    list->setExpanded(index, true);
+    if (expandItem) list->setExpanded(index, true);
     list->scrollTo(index, QAbstractItemView::PositionAtCenter);
 }
 
@@ -1537,13 +1588,13 @@ void MainWindow::scrollMapListToCurrentLayout(MapTree *list) {
 // - The map list was in the middle of a search
 // - A map/layout is being opened by interacting with the list (in which case `lockMapListAutoScroll` is true)
 // - The item is not in the list (e.g. a layout ID for the Groups list)
-void MainWindow::scrollCurrentMapListToItem(const QString &itemName) {
+void MainWindow::scrollCurrentMapListToItem(const QString &itemName, bool expandItem) {
     if (this->lockMapListAutoScroll)
         return;
 
     auto toolbar = getCurrentMapListToolBar();
     if (toolbar && toolbar->filterText().isEmpty()) {
-        scrollMapList(toolbar->list(), itemName);
+        scrollMapList(toolbar->list(), itemName, expandItem);
     }
 }
 
@@ -1565,6 +1616,7 @@ void MainWindow::onOpenMapListContextMenu(const QPoint &point) {
     QAction* openItemAction = nullptr;
     QAction* copyListNameAction = nullptr;
     QAction* copyToolTipAction = nullptr;
+    QAction* sortFoldersAction = nullptr;
 
     if (itemType == "map_name") {
         // Right-clicking on a map.
@@ -1596,6 +1648,8 @@ void MainWindow::onOpenMapListContextMenu(const QPoint &point) {
         deleteFolderAction = menu.addAction("Delete Location");
         if (itemName == this->editor->project->getEmptyMapsecName())
             deleteFolderAction->setEnabled(false); // Disallow deleting the default name
+        menu.addSeparator();
+        sortFoldersAction = menu.addAction(list->isSortingEnabled() ? "Sort List by Value" : "Sort List Alphabetically");
     } else if (itemType == "map_layout") {
         // Right-clicking on a map layout
         openItemAction = menu.addAction("Open Layout");
@@ -1612,6 +1666,8 @@ void MainWindow::onOpenMapListContextMenu(const QPoint &point) {
         addToFolderAction = menu.addAction("Add New Map with Layout");
         //menu.addSeparator();
         //deleteFolderAction = menu.addAction("Delete Layout"); // TODO: No support for deleting layouts
+        menu.addSeparator();
+        sortFoldersAction = menu.addAction(list->isSortingEnabled() ? "Sort List by Value" : "Sort List Alphabetically");
     }
 
     if (addToFolderAction) {
@@ -1644,6 +1700,12 @@ void MainWindow::onOpenMapListContextMenu(const QPoint &point) {
     if (copyToolTipAction) {
         connect(copyToolTipAction, &QAction::triggered, [this, selectedItem] {
             setClipboardData(selectedItem->toolTip());
+        });
+    }
+    if (sortFoldersAction) {
+        connect(sortFoldersAction, &QAction::triggered, [this, list, itemName] {
+            setMapListSorted(list, !list->isSortingEnabled());
+            scrollCurrentMapListToItem(itemName, false);
         });
     }
 
@@ -1761,14 +1823,6 @@ void MainWindow::openDuplicateLayoutDialog(const QString &layoutId) {
         dialog->open();
     } else {
         RecentErrorMessage::show(QString("Unable to duplicate '%1'.").arg(layoutId), this);
-    }
-}
-
-void MainWindow::openDuplicateMapOrLayoutDialog() {
-    if (this->editor->map) {
-        openDuplicateMapDialog(this->editor->map->name());
-    } else if (this->editor->layout) {
-        openDuplicateLayoutDialog(this->editor->layout->id);
     }
 }
 
@@ -1893,6 +1947,19 @@ void MainWindow::rebuildMapList_Layouts() {
     this->layoutTreeModel = new LayoutTreeModel(this->editor->project);
     this->layoutListProxyModel->setSourceModel(this->layoutTreeModel);
     ui->mapListToolBar_Layouts->refreshFilter();
+}
+
+void MainWindow::setMapListSorted(MapTree *list, bool sort) {
+    if (sort == list->isSortingEnabled())
+        return;
+    list->setSortingEnabled(sort);
+    list->sortByColumn(sort ? 0 : -1, Qt::SortOrder::AscendingOrder);
+
+    if (list == ui->locationList) {
+        porymapConfig.mapListLocationsSorted = sort;
+    } else if (list == ui->layoutList) {
+        porymapConfig.mapListLayoutsSorted = sort;
+    }
 }
 
 QString MainWindow::getActiveItemName() {
@@ -2226,6 +2293,8 @@ void MainWindow::on_mainTabBar_tabBarClicked(int index)
         ui->stackedWidget_MapEvents->setCurrentIndex(1);
     } else if (index == MainTab::Connections) {
         ui->graphicsView_Connections->setFocus(); // Avoid opening tab with focus on something editable
+        connect(this, &MainWindow::mapOpened, this, &MainWindow::tryUnlockMainTabIcon, Qt::UniqueConnection);
+        connect(&this->unlockableMainTabIcon, &UnlockableIcon::unlocked, this, &MainWindow::overrideMainTabIcons, Qt::UniqueConnection);
     }
 
     if (!editor->map) return;
@@ -2233,6 +2302,18 @@ void MainWindow::on_mainTabBar_tabBarClicked(int index)
         if (editor->project && editor->project->wildEncountersLoaded)
             editor->saveEncounterTabData();
     }
+}
+
+void MainWindow::tryUnlockMainTabIcon(const Map* map) {
+    if (!map || this->unlockableMainTabIcon.isUnlocked()) return;
+    const Layout* layout = map->layout();
+    if (!layout) return;
+
+    QSet<QChar> chars;
+    if (!layout->name.isEmpty()) chars.insert(layout->name.at(0));
+    const QString tilesetName = Tileset::stripPrefix(layout->tileset_secondary_label);
+    if (!tilesetName.isEmpty()) chars.insert(tilesetName.at(0));
+    this->unlockableMainTabIcon.tryUnlock(chars);
 }
 
 void MainWindow::on_actionZoom_In_triggered() {
@@ -3091,9 +3172,9 @@ void MainWindow::on_horizontalSlider_CollisionZoom_valueChanged(int value) {
                editor->movement_permissions_selector_item->pixmap().height());
     size *= scale;
 
-    ui->graphicsView_Collision->setResizeAnchor(QGraphicsView::NoAnchor);
-    ui->graphicsView_Collision->setTransform(transform);
-    ui->graphicsView_Collision->setFixedSize(size.width() + 2, size.height() + 2);
+    ui->graphicsView_CollisionSelector->setResizeAnchor(QGraphicsView::NoAnchor);
+    ui->graphicsView_CollisionSelector->setTransform(transform);
+    ui->graphicsView_CollisionSelector->setFixedSize(size.width() + 2, size.height() + 2);
     ui->scrollAreaWidgetContents_Collision->adjustSize();
 }
 
@@ -3187,7 +3268,7 @@ bool MainWindow::closeSupplementaryWindows() {
     // We have some QPointers to windows that may have been closed above.
     // Make sure we force them to update to nullptr now; they may be read
     // before the next event loop gets a chance to update them.
-    QApplication::sendPostedEvents();
+    QApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
     return true;
 }
 
@@ -3211,6 +3292,7 @@ bool MainWindow::closeProject() {
     }
     editor->closeProject();
     clearProjectUI();
+    refreshRecentProjectsMenu();
     setWindowDisabled(true);
     updateWindowTitle();
 

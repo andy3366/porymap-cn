@@ -14,6 +14,7 @@
 #include <QGraphicsPixmapItem>
 #include <QFontDatabase>
 #include <QStandardPaths>
+#include <QColorSpace>
 #include <set>
 
 #include "events.h"
@@ -97,6 +98,8 @@ public:
     int mapListTab;
     bool mapListEditGroupsEnabled;
     QMap<int, bool> mapListHideEmptyEnabled;
+    bool mapListLayoutsSorted;
+    bool mapListLocationsSorted;
     bool prettyCursors;
     bool mirrorConnectingMaps;
     bool showDiveEmergeMaps;
@@ -132,6 +135,7 @@ public:
     bool eventDeleteWarningDisabled;
     bool eventOverlayEnabled;
     bool checkForUpdates;
+    bool showProjectLoadingScreen;
     QDateTime lastUpdateCheckTime;
     QVersionNumber lastUpdateCheckVersion;
     QMap<QUrl, QDateTime> rateLimitTimes;
@@ -145,6 +149,7 @@ public:
     std::set<LogType> statusBarLogTypes;
     QFont applicationFont;
     QFont mapListFont;
+    int imageExportColorSpaceId;
 
 protected:
     virtual void parseConfigKeyValue(QString key, QString value) override;

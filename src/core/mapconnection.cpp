@@ -68,6 +68,10 @@ QPixmap MapConnection::render() const {
     return map->renderConnection(m_direction, m_parentMap ? m_parentMap->layout() : nullptr);
 }
 
+QImage MapConnection::renderImage() const {
+    return render().toImage();
+}
+
 // Get the position of the target map relative to its parent map.
 // For right/down connections this is offset by the dimensions of the parent map.
 // For left/up connections this is offset by the dimensions of the target map.

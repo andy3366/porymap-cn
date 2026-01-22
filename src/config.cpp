@@ -327,6 +327,8 @@ void PorymapConfig::reset() {
     this->mapListTab = 0;
     this->mapListEditGroupsEnabled = false;
     this->mapListHideEmptyEnabled.clear();
+    this->mapListLayoutsSorted = true;
+    this->mapListLocationsSorted = true;
     this->prettyCursors = true;
     this->mirrorConnectingMaps = true;
     this->showDiveEmergeMaps = false;
@@ -362,6 +364,7 @@ void PorymapConfig::reset() {
     this->eventDeleteWarningDisabled = false;
     this->eventOverlayEnabled = false;
     this->checkForUpdates = true;
+    this->showProjectLoadingScreen = true;
     this->lastUpdateCheckTime = QDateTime();
     this->lastUpdateCheckVersion = porymapVersion;
     this->rateLimitTimes.clear();
@@ -373,6 +376,16 @@ void PorymapConfig::reset() {
     this->statusBarLogTypes = { LogType::LOG_ERROR, LogType::LOG_WARN };
     this->applicationFont = QFont();
     this->mapListFont = PorymapConfig::defaultMapListFont();
+#ifdef Q_OS_MACOS
+    // Since the release of the Retina display, Apple products use the Display P3 color space by default.
+    // If we don't use this for exported images (which by default will either have no color space or the sRGB
+    // color space) then they may appear to have different colors than the same image displayed in Porymap.
+    this->imageExportColorSpaceId = static_cast<int>(QColorSpace::DisplayP3);
+#else
+    // As of writing Qt has no way to get a reasonable color space from the user's environment,
+    // so we export images without one and let them handle it.
+    this->imageExportColorSpaceId = 0;
+#endif
 }
 
 void PorymapConfig::parseConfigKeyValue(QString key, QString value) {
@@ -397,6 +410,10 @@ void PorymapConfig::parseConfigKeyValue(QString key, QString value) {
             return;
         }
         this->mapListHideEmptyEnabled.insert(tab, getConfigBool(key, value));
+    } else if (key == "map_list_layouts_sorted") {
+        this->mapListLayoutsSorted = getConfigBool(key, value);
+    } else if (key == "map_list_locations_sorted") {
+        this->mapListLocationsSorted = getConfigBool(key, value);
     } else if (key == "main_window_geometry") {
         this->mainWindowGeometry = bytesFromString(value);
     } else if (key == "main_window_state") {
@@ -512,6 +529,8 @@ void PorymapConfig::parseConfigKeyValue(QString key, QString value) {
         this->eventOverlayEnabled = getConfigBool(key, value);
     } else if (key == "check_for_updates") {
         this->checkForUpdates = getConfigBool(key, value);
+    } else if (key == "show_project_loading_screen") {
+        this->showProjectLoadingScreen = getConfigBool(key, value);
     } else if (key == "last_update_check_time") {
         this->lastUpdateCheckTime = QDateTime::fromString(value).toLocalTime();
     } else if (key == "last_update_check_version") {
@@ -563,6 +582,8 @@ void PorymapConfig::parseConfigKeyValue(QString key, QString value) {
     } else if (key == "map_list_font") {
         this->mapListFont = QFont();
         this->mapListFont.fromString(value);
+    } else if (key == "image_export_color_space_id") {
+        this->imageExportColorSpaceId = getConfigInteger(key, value, 0, 8);
     } else {
         logWarn(QString("Invalid config key found in config file %1: '%2'").arg(this->filepath()).arg(key));
     }
@@ -579,6 +600,8 @@ QMap<QString, QString> PorymapConfig::getKeyValueMap() {
     for (auto i = this->mapListHideEmptyEnabled.constBegin(); i != this->mapListHideEmptyEnabled.constEnd(); i++) {
         map.insert(QStringLiteral("map_list_hide_empty_enabled/") + QString::number(i.key()), i.value() ? "1" : "0");
     }
+    map.insert("map_list_layouts_sorted", this->mapListLayoutsSorted ? "1" : "0");
+    map.insert("map_list_locations_sorted", this->mapListLocationsSorted ? "1" : "0");
     map.insert("main_window_geometry", stringFromByteArray(this->mainWindowGeometry));
     map.insert("main_window_state", stringFromByteArray(this->mainWindowState));
     map.insert("map_splitter_state", stringFromByteArray(this->mapSplitterState));
@@ -632,6 +655,7 @@ QMap<QString, QString> PorymapConfig::getKeyValueMap() {
     map.insert("event_delete_warning_disabled", QString::number(this->eventDeleteWarningDisabled));
     map.insert("event_overlay_enabled", QString::number(this->eventOverlayEnabled));
     map.insert("check_for_updates", QString::number(this->checkForUpdates));
+    map.insert("show_project_loading_screen", QString::number(this->showProjectLoadingScreen));
     map.insert("last_update_check_time", this->lastUpdateCheckTime.toUTC().toString());
     map.insert("last_update_check_version", this->lastUpdateCheckVersion.toString());
     for (auto i = this->rateLimitTimes.cbegin(), end = this->rateLimitTimes.cend(); i != end; i++){
@@ -656,6 +680,7 @@ QMap<QString, QString> PorymapConfig::getKeyValueMap() {
     map.insert("status_bar_log_types", logTypesStrings.join(","));
     map.insert("application_font", this->applicationFont.toString());
     map.insert("map_list_font", this->mapListFont.toString());
+    map.insert("image_export_color_space_id", QString::number(this->imageExportColorSpaceId));
     
     return map;
 }

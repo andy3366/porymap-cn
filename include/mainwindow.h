@@ -34,6 +34,7 @@
 #include "newlayoutdialog.h"
 #include "message.h"
 #include "resizelayoutpopup.h"
+#include "unlockableicon.h"
 
 #if __has_include(<QJSValue>)
 #include <QJSValue>
@@ -354,6 +355,8 @@ private:
     MapNavigation forwardNavigation;
     bool ignoreNavigationRecords = false;
 
+    UnlockableIcon unlockableMainTabIcon;
+
     QAction *copyAction = nullptr;
     QAction *pasteAction = nullptr;
 
@@ -365,6 +368,8 @@ private:
 
     bool tilesetNeedsRedraw = false;
     bool lockMapListAutoScroll = false;
+
+    QSet<QObject*> objectsDisabled;
 
     bool setLayout(const QString &layoutId);
     bool setMap(const QString &mapName);
@@ -390,13 +395,12 @@ private:
     NewLayoutDialog* createNewLayoutDialog(const Layout *layoutToCopy = nullptr);
     void openNewLayoutDialog();
     void openDuplicateLayoutDialog(const QString &layoutId);
-    void openDuplicateMapOrLayoutDialog();
     void openNewMapGroupDialog();
     void openNewLocationDialog();
-    void scrollMapList(MapTree *list, const QString &itemName);
+    void scrollMapList(MapTree *list, const QString &itemName, bool expandItem = true);
     void scrollMapListToCurrentMap(MapTree *list);
     void scrollMapListToCurrentLayout(MapTree *list);
-    void scrollCurrentMapListToItem(const QString &itemName);
+    void scrollCurrentMapListToItem(const QString &itemName, bool expandItem = true);
     void showFileWatcherWarning();
     bool openProject(QString dir, bool initial = false);
     bool closeProject();
@@ -410,6 +414,7 @@ private:
 
     void rebuildMapList_Locations();
     void rebuildMapList_Layouts();
+    void setMapListSorted(MapTree *list, bool sort);
     void updateMapList();
     void openMapListItem(const QModelIndex &index);
     void onMapListTabChanged(int index);
@@ -458,7 +463,8 @@ private:
     MapListToolBar* getCurrentMapListToolBar();
     MapTree* getCurrentMapList();
     void setLocationComboBoxes(const QStringList &locations);
-
+    void overrideMainTabIcons(const QIcon& icon);
+    void tryUnlockMainTabIcon(const Map* map);
     QObjectList shortcutableObjects() const;
     void addCustomHeaderValue(QString key, QJsonValue value, bool isNew = false);
 

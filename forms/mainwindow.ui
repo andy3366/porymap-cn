@@ -1114,6 +1114,9 @@
                           <property name="editable">
                            <bool>true</bool>
                           </property>
+                          <property name="minimumContentsLength">
+                           <number>0</number>
+                          </property>
                          </widget>
                         </item>
                         <item row="2" column="0">
@@ -1134,35 +1137,24 @@
                           <property name="editable">
                            <bool>true</bool>
                           </property>
-                         </widget>
-                        </item>
-                        <item row="0" column="0">
-                         <widget class="QFrame" name="frame_LayoutSelection">
-                          <property name="frameShape">
-                           <enum>QFrame::Shape::NoFrame</enum>
+                          <property name="minimumContentsLength">
+                           <number>0</number>
                           </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Shadow::Raised</enum>
-                          </property>
-                          <layout class="QFormLayout" name="formLayout_3">
-                           <property name="topMargin">
-                            <number>2</number>
-                           </property>
-                           <property name="bottomMargin">
-                            <number>2</number>
-                           </property>
-                           <item row="0" column="0">
-                            <widget class="QLabel" name="label_Layout">
-                             <property name="text">
-                              <string>布局</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
                          </widget>
                         </item>
                         <item row="0" column="1">
-                         <widget class="NoScrollComboBox" name="comboBox_LayoutSelector"/>
+                         <widget class="NoScrollComboBox" name="comboBox_LayoutSelector">
+                          <property name="minimumContentsLength">
+                           <number>0</number>
+                          </property>
+                          </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_Layout">
+                          <property name="text">
+                           <string>布局</string>
+                          </property>
+                         </widget>
                         </item>
                        </layout>
                       </widget>
@@ -1249,7 +1241,7 @@
                           </spacer>
                          </item>
                          <item row="2" column="1">
-                          <widget class="NoScrollGraphicsView" name="graphicsView_Collision">
+                          <widget class="NoScrollGraphicsView" name="graphicsView_CollisionSelector">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                              <horstretch>0</horstretch>
@@ -2605,9 +2597,6 @@
                   <property name="sizeAdjustPolicy">
                    <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
                   </property>
-                  <property name="dragMode">
-                   <enum>QGraphicsView::DragMode::NoDrag</enum>
-                  </property>
                   <property name="transformationAnchor">
                    <enum>QGraphicsView::ViewportAnchor::AnchorUnderMouse</enum>
                   </property>
@@ -2867,7 +2856,8 @@
     <addaction name="action_NewMap"/>
     <addaction name="action_NewLayout"/>
     <addaction name="actionNew_Tileset"/>
-    <addaction name="actionDuplicate_Current_Map_Layout"/>
+    <addaction name="actionDuplicate_Current_Map"/>
+    <addaction name="actionDuplicate_Current_Layout"/>
     <addaction name="separator"/>
     <addaction name="actionImport_Map_from_Advance_Map_1_92"/>
     <addaction name="separator"/>
@@ -3244,9 +3234,17 @@
     <string>新建布局...</string>
    </property>
   </action>
-  <action name="actionDuplicate_Current_Map_Layout">
+  <action name="actionDuplicate_Current_Map">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>复制当前地图/布局...</string>
+    <string>复制当前地图...</string>
+   </property>
+  </action>
+  <action name="actionDuplicate_Current_Layout">
+   <property name="text">
+    <string>复制当前布局...</string>
    </property>
   </action>
   <action name="actionBack">

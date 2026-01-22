@@ -95,8 +95,7 @@ int Project::getSupportedMajorVersion(QString *errorOut) {
 
     // First we need to know which (if any) known history this project belongs to.
     // We'll get the root commit, then compare it to the known root commits for the base project repos.
-    static const QStringList args_getRootCommit = { "rev-list", "--max-parents=0", "HEAD" };
-    process.setArguments(args_getRootCommit);
+    process.setArguments({ "-c", QString("safe.directory=%1").arg(this->root), "rev-list", "--max-parents=0", "HEAD" });
     process.start();
     if (!process.waitForFinished(timeoutLimit) || process.exitStatus() != QProcess::ExitStatus::NormalExit || process.exitCode() != 0) {
         if (errorOut) {
@@ -158,7 +157,7 @@ int Project::getSupportedMajorVersion(QString *errorOut) {
             // An empty commit hash means 'consider any point in the history a supported version'
             return versionNum;
         }
-        process.setArguments({ "merge-base", "--is-ancestor", commitHash, "HEAD" });
+        process.setArguments({ "-c", QString("safe.directory=%1").arg(this->root), "merge-base", "--is-ancestor", commitHash, "HEAD" });
         process.start();
         if (!process.waitForFinished(timeoutLimit) || process.exitStatus() != QProcess::ExitStatus::NormalExit) {
             if (errorOut) {
@@ -767,6 +766,7 @@ bool Project::watchFile(const QString &filename) {
     if (!this->fileWatcher) {
         // Only create the file watcher when it's first needed (even an empty QFileSystemWatcher will consume system resources).
         this->fileWatcher = new QFileSystemWatcher(this);
+        if (!this->fileWatcher) return false;
         QObject::connect(this->fileWatcher, &QFileSystemWatcher::fileChanged, this, &Project::recordFileChange);
     }
 
@@ -838,6 +838,7 @@ void Project::recordFileChange(const QString &filepath) {
 // When calling 'watchFile' we record failures rather than log them immediately.
 // We do this primarily to condense the warning if we fail to monitor any files.
 void Project::logFileWatchStatus() {
+    Map::setFileWatchingEnabled(porymapConfig.monitorFiles);
     if (!this->fileWatcher)
         return;
 
@@ -851,6 +852,9 @@ void Project::logFileWatchStatus() {
         // on Windows and the project files are in WSL2. Rather than filling the log by
         // outputting a warning for every file, just log that we failed to monitor any of them.
         logWarn(QString("Failed to monitor project files"));
+
+        // Similarly, avoid logging a warning every time we open a map. We can assume that will also fail.
+        Map::setFileWatchingEnabled(false);
         return;
     } else {
         logInfo(QString("Successfully monitoring %1/%2 project files").arg(numSuccessful).arg(numAttempted));
@@ -1522,8 +1526,9 @@ void Project::readTilesetPaths(Tileset* tileset) {
         
         const QString tilesImagePath = parser.readCIncbin(graphicsFile, tileset->tiles_label);
         const QStringList palettePaths = parser.readCIncbinArray(graphicsFile, tileset->palettes_label);
-        const QString metatilesPath = parser.readCIncbin(metatilesFile, tileset->metatiles_label);
-        const QString metatileAttrsPath = parser.readCIncbin(metatilesFile, tileset->metatile_attrs_label);
+        auto metatileIncbins = parser.readCIncbinMulti(metatilesFile);
+        const QString metatilesPath = metatileIncbins.value(tileset->metatiles_label);
+        const QString metatileAttrsPath = metatileIncbins.value(tileset->metatile_attrs_label);
 
         if (!tilesImagePath.isEmpty())
             tileset->tilesImagePath = this->fixGraphicPath(rootDir + tilesImagePath);
@@ -1564,17 +1569,14 @@ Tileset *Project::createNewTileset(QString name, bool secondary, bool checkerboa
 
     // Create tileset directories
     const QString fullDirectoryPath = QString("%1/%2").arg(this->root).arg(tileset->getExpectedDir());
-    QDir directory;
-    if (!directory.mkpath(fullDirectoryPath)) {
-        logError(QString("Failed to create directory '%1' for new tileset '%2'").arg(fullDirectoryPath).arg(tileset->name));
-        delete tileset;
-        return nullptr;
-    }
     const QString palettesPath = fullDirectoryPath + "/palettes";
-    if (!directory.mkpath(palettesPath)) {
-        logError(QString("Failed to create palettes directory '%1' for new tileset '%2'").arg(palettesPath).arg(tileset->name));
-        delete tileset;
-        return nullptr;
+    for (const auto& dir : {fullDirectoryPath, palettesPath}) {
+        QString error = Util::mkpath(dir);
+        if (!error.isEmpty()) {
+            logError(QString("Failed to create tileset '%1': %2.").arg(tileset->name).arg(error));
+            delete tileset;
+            return nullptr;
+        }
     }
 
     tileset->tilesImagePath = fullDirectoryPath + "/tiles.png";
@@ -2647,8 +2649,8 @@ bool Project::readRegionMapSections() {
 }
 
 void Project::setRegionMapEntries(const QHash<QString, MapSectionEntry> &entries) {
-    for (auto it = entries.constBegin(); it != entries.constEnd(); it++) {
-        this->locationData[it.key()].map = it.value();
+    for (auto it = this->locationData.keyBegin(); it != this->locationData.keyEnd(); it++) {
+        this->locationData[*it].map = entries.value(*it);
     }
 }
 
@@ -3171,15 +3173,19 @@ bool Project::readEventGraphics() {
 
 QPixmap Project::getEventPixmap(const QString &gfxName, const QString &movementName) {
     struct FrameData {
-        int index = 0;
-        bool hFlip = false;
+        int index;
+        bool hFlip;
+
+        // Default values + compatibility with older compilers
+        FrameData(int index_ = 0, bool hFlip_ = false)
+            : index(index_), hFlip(hFlip_) {}
     };
     // TODO: Expose as a setting to users
     static const QMap<QString, FrameData> directionToFrameData = {
-        {"DIR_SOUTH", { .index = 0, .hFlip = false }},
-        {"DIR_NORTH", { .index = 1, .hFlip = false }},
-        {"DIR_WEST",  { .index = 2, .hFlip = false }},
-        {"DIR_EAST",  { .index = 2, .hFlip = true }}, // East-facing sprite is just the West-facing sprite mirrored
+        {"DIR_SOUTH", { 0, false }},
+        {"DIR_NORTH", { 1, false }},
+        {"DIR_WEST",  { 2, false }},
+        {"DIR_EAST",  { 2,  true }}, // East-facing sprite is just the West-facing sprite mirrored
     };
     const QString direction = this->facingDirections.value(movementName, "DIR_SOUTH");
     auto frameData = directionToFrameData.value(direction);

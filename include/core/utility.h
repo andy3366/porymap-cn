@@ -4,6 +4,7 @@
 
 #include <QString>
 #include <QLineEdit>
+#include <QColorSpace>
 
 namespace Util {
     void numericalModeSort(QStringList &list);
@@ -17,6 +18,8 @@ namespace Util {
     void setErrorStylesheet(QLineEdit *lineEdit, bool isError);
     QString toStylesheetString(const QFont &font);
     void show(QWidget *w);
+    QColorSpace toColorSpace(int colorSpaceInt);
+    QString mkpath(const QString& dirPath);
 }
 
 #endif // UTILITY_H

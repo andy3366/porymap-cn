@@ -3,6 +3,7 @@
 #include <QCollator>
 #include <QRegularExpression>
 #include <QFileInfo>
+#include <QDir>
 
 // Sometimes we want to sort names alphabetically to make them easier to find in large combo box lists.
 // QStringList::sort (as of writing) can only sort numbers in lexical order, which has an undesirable
@@ -109,8 +110,9 @@ QString Util::replaceExtension(const QString &path, const QString &newExtension)
 }
 
 void Util::setErrorStylesheet(QLineEdit *lineEdit, bool isError) {
-    static const QString stylesheet = QStringLiteral("QLineEdit { background-color: rgba(255, 0, 0, 25%) }");
-    lineEdit->setStyleSheet(isError ? stylesheet : "");
+    static const QString errorStylesheet = QStringLiteral("QLineEdit { background-color: rgba(255, 0, 0, 25%) }");
+    static const QString defaultStylesheet = QStringLiteral("QLineEdit {}");
+    lineEdit->setStyleSheet(isError ? errorStylesheet : defaultStylesheet);
 }
 
 void Util::show(QWidget *w) {
@@ -124,4 +126,38 @@ void Util::show(QWidget *w) {
         w->raise();
         w->activateWindow();
     }
+}
+
+// Safe conversion from an int representing a QColorSpace::NamedColorSpace to a QColorSpace.
+// This lets us use 0 to mean "no color space".
+QColorSpace Util::toColorSpace(int colorSpaceInt) {
+    QColorSpace colorSpace;
+
+    int min = static_cast<int>(QColorSpace::SRgb);
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
+    // Qt 6.8.0 introduced additional color spaces
+    int max = static_cast<int>(QColorSpace::Bt2100Hlg);
+#else
+    int max = static_cast<int>(QColorSpace::ProPhotoRgb);
+#endif
+
+    if (colorSpaceInt >= min && colorSpaceInt <= max) {
+        return QColorSpace(static_cast<QColorSpace::NamedColorSpace>(colorSpaceInt));
+    } else {
+        return QColorSpace();
+    }
+}
+
+// Creates a directory named 'dirPath', including any non-existent parent directories. Returns an error message, if any.
+// If 'dirPath' already exists it's considered an error unless the directory has no files.
+QString Util::mkpath(const QString& dirPath) {
+    if (!QDir::root().mkpath(dirPath)) {
+        return QString("Failed to create directory '%1'").arg(dirPath);
+    }
+    QDir dir(dirPath);
+    QStringList files = dir.entryList(QDir::Files | QDir::NoDotAndDotDot);
+    if (!files.isEmpty()) {
+        return QString("Directory '%1' already exists and is not empty").arg(dirPath);
+    }
+    return QString();
 }

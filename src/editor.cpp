@@ -217,8 +217,8 @@ void Editor::setEditAction(EditAction editAction) {
     this->cursorMapTileRect->setSingleTileMode(!(editAction == EditAction::Paint && this->editMode == EditMode::Metatiles));
 
     auto dragMode = (editAction == EditAction::Move) ? QGraphicsView::ScrollHandDrag : QGraphicsView::NoDrag;
-    ui->graphicsView_Map->setDragMode(dragMode);
-    ui->graphicsView_Connections->setDragMode(dragMode);
+    ui->graphicsView_Map->setDesiredDragMode(dragMode);
+    ui->graphicsView_Connections->setDesiredDragMode(dragMode);
 
     // Update cursor
     if (this->settings->betterCursors) {
@@ -1244,28 +1244,27 @@ void Editor::onMapHoverCleared() {
 }
 
 void Editor::setStatusFromMapPos(const QPoint &pos) {
-    int x = pos.x();
-    int y = pos.y();
+    Block block;
+    if (!this->layout || !this->layout->getBlock(pos, &block)) {
+        ui->statusBar->clearMessage();
+        return;
+    }
+
     if (this->editMode == EditMode::Metatiles) {
-        int blockIndex = y * layout->getWidth() + x;
-        int metatileId = layout->blockdata.at(blockIndex).metatileId();
         this->ui->statusBar->showMessage(QString("X: %1, Y: %2, %3, Scale = %4x")
-                              .arg(x)
-                              .arg(y)
-                              .arg(getMetatileDisplayMessage(metatileId))
+                              .arg(pos.x())
+                              .arg(pos.y())
+                              .arg(getMetatileDisplayMessage(block.metatileId()))
                               .arg(QString::number(zoomLevels[this->scaleIndex], 'g', 2)));
     } else if (this->editMode == EditMode::Collision) {
-        int blockIndex = y * layout->getWidth() + x;
-        uint16_t collision = layout->blockdata.at(blockIndex).collision();
-        uint16_t elevation = layout->blockdata.at(blockIndex).elevation();
         this->ui->statusBar->showMessage(QString("X: %1, Y: %2, %3")
-                              .arg(x)
-                              .arg(y)
-                              .arg(this->getMovementPermissionText(collision, elevation)));
+                              .arg(pos.x())
+                              .arg(pos.y())
+                              .arg(this->getMovementPermissionText(block.collision(), block.elevation())));
     } else if (this->editMode == EditMode::Events) {
         this->ui->statusBar->showMessage(QString("X: %1, Y: %2, Scale = %3x")
-                              .arg(x)
-                              .arg(y)
+                              .arg(pos.x())
+                              .arg(pos.y())
                               .arg(QString::number(zoomLevels[this->scaleIndex], 'g', 2)));
     }
 }
@@ -1432,9 +1431,15 @@ void Editor::adjustStraightPathPos(QGraphicsSceneMouseEvent *event, LayoutPixmap
     }
 }
 
+bool Editor::isMiddleButtonScrollInProgress() const {
+    if (this->editMode == EditMode::Connections)
+        return ui->graphicsView_Connections->getIsMiddleButtonScrollInProgress();
+    return ui->graphicsView_Map->getIsMiddleButtonScrollInProgress();
+}
+
 void Editor::mouseEvent_map(QGraphicsSceneMouseEvent *event, LayoutPixmapItem *item) {
     auto editAction = getEditAction();
-    if (editAction == EditAction::Move) {
+    if (editAction == EditAction::Move || isMiddleButtonScrollInProgress()) {
         event->ignore();
         return;
     }
@@ -1450,7 +1455,7 @@ void Editor::mouseEvent_map(QGraphicsSceneMouseEvent *event, LayoutPixmapItem *i
                 } else {
                     item->updateMetatileSelection(event);
                 }
-            } else if (event->buttons() & Qt::MiddleButton) {
+            } else if (event->modifiers() & Qt::AltModifier) {
                 if (event->modifiers() & Qt::ControlModifier) {
                     item->magicFill(event);
                 } else {

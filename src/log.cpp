@@ -104,6 +104,17 @@ bool removeLogStatusBar(QStatusBar *statusBar) {
     return false;
 }
 
+void pruneLogDisplays() {
+    auto it = QMutableListIterator<Log::Display>(Log::displays);
+    while (it.hasNext()) {
+        auto display = it.next();
+        if (!display.statusBar) {
+            // Status bar was deleted externally, remove entry from the list.
+            it.remove();
+        }
+    }
+}
+
 void updateLogDisplays(const QString &message, LogType type) {
     static const QMap<LogType, QPixmap> icons = {
         {LogType::LOG_INFO,  QPixmap(QStringLiteral(":/icons/information.ico"))},
@@ -111,15 +122,9 @@ void updateLogDisplays(const QString &message, LogType type) {
         {LogType::LOG_ERROR, QPixmap(QStringLiteral(":/icons/error.ico"))},
     };
 
+    pruneLogDisplays();
     bool startTimer = false;
-    auto it = QMutableListIterator<Log::Display>(Log::displays);
-    while (it.hasNext()) {
-        auto display = it.next();
-        if (!display.statusBar) {
-            // Status bar was deleted externally, remove entry from the list.
-            it.remove();
-            continue;
-        }
+    for (const auto &display : Log::displays) {
         // Update the display, but only if it accepts this message type.
         if (display.acceptedTypes.contains(type)) {
             display.icon->setPixmap(icons.value(type));
@@ -134,6 +139,7 @@ void updateLogDisplays(const QString &message, LogType type) {
 }
 
 void clearLogDisplays() {
+    pruneLogDisplays();
     for (const auto &display : Log::displays) {
         display.icon->setPixmap(QPixmap());
         display.message->setText(QString());
@@ -189,7 +195,7 @@ void logInit() {
         dir.mkpath(settingsPath);
     Log::path = dir.absoluteFilePath(QStringLiteral("porymap.log"));
     Log::file.setFileName(Log::path);
-    Log::file.open(QIODevice::WriteOnly | QIODevice::Append);
+    if (!Log::file.open(QIODevice::WriteOnly | QIODevice::Append)) return;
     Log::textStream.setDevice(&Log::file);
 
     QObject::connect(&Log::displayClearTimer, &QTimer::timeout, [=] {
